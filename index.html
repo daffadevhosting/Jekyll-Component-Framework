@@ -77,11 +77,11 @@ description: Production-ready modular UI component framework for Jekyll
       <div class="l-stack l-stack--md">
         <h3 class="t-h4">Buttons</h3>
         <div class="u-flex u-gap-3 u-flex-wrap">
-          {% include components/button.html label="Primary" variant="primary" %}
-          {% include components/button.html label="Secondary" variant="secondary" %}
-          {% include components/button.html label="Outline" variant="outline" %}
-          {% include components/button.html label="Ghost" variant="ghost" %}
-          {% include components/button.html label="Danger" variant="danger" %}
+          {% include components/button.html label="Primary" variant="primary" size="md" %}
+          {% include components/button.html label="Secondary" variant="secondary" size="md" %}
+          {% include components/button.html label="Outline" variant="outline" size="md" %}
+          {% include components/button.html label="Ghost" variant="ghost" size="md" %}
+          {% include components/button.html label="Danger" variant="danger" size="md" %}
           {% include components/button.html label="With Icon" variant="primary" icon="arrow-right" icon_position="right" %}
         </div>
       </div>
@@ -123,8 +123,7 @@ description: Production-ready modular UI component framework for Jekyll
 
       <div class="l-stack l-stack--md">
         <h3 class="t-h4">Modal</h3>
-        {% include components/button.html label="Open Modal" variant="primary" class="" %}
-        <button type="button" class="c-button c-button--primary c-button--md" data-modal-open="demo-modal">Open Modal</button>
+        {% include components/button.html label="Open Modal" variant="primary" modal_open="demo-modal" %}
         {% include components/modal.html
           id="demo-modal"
           title="Confirm action"

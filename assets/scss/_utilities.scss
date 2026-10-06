@@ -58,20 +58,46 @@
 
 // Spacing - Padding
 .u-p-0 { padding: 0 !important; }
+.u-p-1 { padding: var(--space-1) !important; }
 .u-p-2 { padding: var(--space-2) !important; }
+.u-p-3 { padding: var(--space-3) !important; }
 .u-p-4 { padding: var(--space-4) !important; }
+.u-p-5 { padding: var(--space-5) !important; }
 .u-p-6 { padding: var(--space-6) !important; }
 .u-p-8 { padding: var(--space-8) !important; }
+.u-p-10 { padding: var(--space-10) !important; }
+.u-p-12 { padding: var(--space-12) !important; }
+.u-p-16 { padding: var(--space-16) !important; }
+.u-p-20 { padding: var(--space-20) !important; }
+.u-p-24 { padding: var(--space-24) !important; }
 
+.u-px-0 { padding-inline: 0 !important; }
+.u-px-1 { padding-inline: var(--space-1) !important; }
 .u-px-2 { padding-inline: var(--space-2) !important; }
+.u-px-3 { padding-inline: var(--space-3) !important; }
 .u-px-4 { padding-inline: var(--space-4) !important; }
+.u-px-5 { padding-inline: var(--space-5) !important; }
 .u-px-6 { padding-inline: var(--space-6) !important; }
 .u-px-8 { padding-inline: var(--space-8) !important; }
+.u-px-10 { padding-inline: var(--space-10) !important; }
+.u-px-12 { padding-inline: var(--space-12) !important; }
+.u-px-16 { padding-inline: var(--space-16) !important; }
+.u-px-20 { padding-inline: var(--space-20) !important; }
+.u-px-24 { padding-inline: var(--space-24) !important; }
 
+.u-py-0 { padding-block: 0 !important; }
+.u-py-1 { padding-block: var(--space-1) !important; }
 .u-py-2 { padding-block: var(--space-2) !important; }
+.u-py-3 { padding-block: var(--space-3) !important; }
 .u-py-4 { padding-block: var(--space-4) !important; }
+.u-py-5 { padding-block: var(--space-5) !important; }
 .u-py-6 { padding-block: var(--space-6) !important; }
 .u-py-8 { padding-block: var(--space-8) !important; }
+.u-py-10 { padding-block: var(--space-10) !important; }
+.u-py-12 { padding-block: var(--space-12) !important; }
+.u-py-16 { padding-block: var(--space-16) !important; }
+.u-py-20 { padding-block: var(--space-20) !important; }
+.u-py-24 { padding-block: var(--space-24) !important; }
 
 // Width / Height
 .u-w-full { width: 100% !important; }

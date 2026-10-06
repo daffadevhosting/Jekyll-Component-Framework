@@ -23,7 +23,7 @@ Accessible dialog with focus trap, Escape to close, and focus restoration.
 Trigger:
 
 ```html
-<button type="button" data-modal-open="confirm-modal">Open</button>
+{% include components/button.html label="Open" modal_open="confirm-modal" %}
 ```
 
 ## Parameters

@@ -30,6 +30,7 @@ Primary action component. Renders as `<button>` or `<a>` depending on `href`.
 | `size` | string | `md` | `sm` `md` `lg` |
 | `type` | string | `button` | `button` `submit` `reset` |
 | `disabled` | boolean | false | Disabled state |
+| `modal_open` | string | — | Modal id to open when the button is clicked |
 | `icon` | string | — | Icon name |
 | `icon_position` | string | `left` | `left` `right` |
 | `icon_only` | boolean | false | Icon-only button |

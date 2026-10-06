@@ -23,32 +23,60 @@ docs:
         url: /docs/tokens/
       - title: Typography
         url: /docs/typography/
+      - title: Layout Primitives
+        url: /docs/components/layout-primitives/
   - title: Components
     items:
       - title: Button
         url: /docs/components/button/
+      - title: Button Group
+        url: /docs/components/button-group/
       - title: Card
         url: /docs/components/card/
-      - title: Alert
-        url: /docs/components/alert/
       - title: Badge
         url: /docs/components/badge/
       - title: Avatar
         url: /docs/components/avatar/
+      - title: Alert
+        url: /docs/components/alert/
+      - title: Breadcrumb
+        url: /docs/components/breadcrumb/
+      - title: Code Block
+        url: /docs/components/code/
+      - title: Dropdown
+        url: /docs/components/dropdown/
       - title: Accordion
         url: /docs/components/accordion/
       - title: Tabs
         url: /docs/components/tabs/
+      - title: Tooltip
+        url: /docs/components/tooltip/
       - title: Modal
         url: /docs/components/modal/
       - title: Form Controls
         url: /docs/components/forms/
+      - title: Input
+        url: /docs/components/input/
+      - title: Textarea
+        url: /docs/components/textarea/
+      - title: Select
+        url: /docs/components/select/
+      - title: Checkbox
+        url: /docs/components/checkbox/
+      - title: Radio
+        url: /docs/components/radio/
       - title: Spinner
         url: /docs/components/spinner/
       - title: Progress
         url: /docs/components/progress/
+      - title: Pagination
+        url: /docs/components/pagination/
       - title: Navbar
         url: /docs/components/navbar/
+      - title: Toast
+        url: /docs/components/toast/
+      - title: Theme Toggle
+        url: /docs/components/theme-toggle/
   - title: Sections
     items:
       - title: Hero

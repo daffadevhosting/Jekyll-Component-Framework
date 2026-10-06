@@ -20,6 +20,13 @@ All visual decisions flow through CSS custom properties in `assets/scss/_tokens.
 - **Z-index** — dropdown, modal, toast, etc.
 - **Transition** — fast / base / slow
 
+## Spacing utilities
+
+Padding utilities use the spacing tokens directly. For example, `u-p-5` applies
+padding on every side, `u-px-5` applies horizontal padding, and `u-py-5`
+applies vertical padding. Each direction supports `0`, `1`–`6`, `8`, `10`,
+`12`, `16`, `20`, and `24`.
+
 ## Overriding
 
 ```css
