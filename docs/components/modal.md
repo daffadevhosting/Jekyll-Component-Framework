@@ -48,11 +48,9 @@ Trigger:
 
 ## Example
 
-<button type="button" class="c-button c-button--primary c-button--md" data-modal-open="docs-modal">Open demo modal</button>
+<div class="docs-component-example">
 
-{% include components/modal.html
-  id="docs-modal"
-  title="Demo modal"
-  body="This modal demonstrates focus management and Escape handling."
-  footer='<button type="button" class="c-button c-button--ghost c-button--md" data-modal-close>Close</button>'
-%}
+  {% include components/button.html label=site.data.demo.modal_example.trigger_label modal_open=site.data.demo.modal_example.id %}
+  {% include components/modal.html id=site.data.demo.modal_example.id title=site.data.demo.modal_example.title body=site.data.demo.modal_example.body size=site.data.demo.modal_example.size %}
+
+</div>

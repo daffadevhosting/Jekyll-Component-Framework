@@ -19,8 +19,13 @@ Compact label for status, category, or count information.
 %}{% endraw %}
 ```
 
-{% include components/badge.html label="New" variant="success" dot=true %}
-{% include components/badge.html label="Draft" variant="neutral" size="sm" %}
+<div class="docs-component-example">
+
+  {% for badge in site.data.demo.badge_examples %}
+    {% include components/badge.html label=badge.label variant=badge.variant size=badge.badge_size dot=badge.dot %}
+  {% endfor %}
+
+</div>
 
 ## Parameters
 

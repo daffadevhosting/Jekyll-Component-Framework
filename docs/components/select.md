@@ -19,6 +19,14 @@ Styled native select with optional label, placeholder, hint, and error.
 %}{% endraw %}
 ```
 
+## Example
+
+<div class="docs-component-example">
+
+{% include components/select.html name="docs-plan" label="Plan" placeholder="Choose a plan" options=site.data.demo.select_options required=true hint="You can change your plan at any time." %}
+
+</div>
+
 Each option has `value`, `label`, and optional `selected` properties.
 
 ## Parameters

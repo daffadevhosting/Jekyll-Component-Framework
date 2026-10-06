@@ -11,6 +11,11 @@
 {% endcomment %}
 
 {% assign variant = include.variant | default: "default" %}
+{% assign heading_level = include.heading_level | default: 1 | plus: 0 %}
+{% if heading_level < 1 or heading_level > 6 %}
+  {% assign heading_level = 1 %}
+{% endif %}
+{% assign heading_tag = "h" | append: heading_level %}
 
 <section class="s-hero s-hero--{{ variant }} l-section {{ include.class }}">
   <div class="l-container">
@@ -20,7 +25,7 @@
           <p class="s-hero__eyebrow">{{ include.eyebrow }}</p>
         {% endif %}
 
-        <h1 class="s-hero__title">{{ include.title }}</h1>
+        <{{ heading_tag }} class="s-hero__title">{{ include.title }}</{{ heading_tag }}>
 
         {% if include.subtitle %}
           <p class="s-hero__subtitle">{{ include.subtitle }}</p>

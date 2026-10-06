@@ -20,6 +20,14 @@ Expandable sections for FAQs and stacked content.
 
 Each item: `{ title, content, open }`.
 
+## Example
+
+<div class="docs-component-example">
+
+{% include components/accordion.html id="docs-faq" items=site.data.demo.accordion_items %}
+
+</div>
+
 ## Parameters
 
 | Parameter | Type | Description |

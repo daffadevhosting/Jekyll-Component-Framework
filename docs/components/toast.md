@@ -13,6 +13,23 @@ The toast include renders the live-region container used by the notification Jav
 {% raw %}{% include components/toast.html position="bottom-right" %}{% endraw %}
 ```
 
+## Example
+
+<div class="docs-component-example">
+
+{% include components/button.html id="docs-toast-trigger" label="Show success toast" variant="success" %}
+<script>
+  document.getElementById('docs-toast-trigger').addEventListener('click', function() {
+    window.showToast({
+      title: 'Saved',
+      message: 'Your changes have been saved.',
+      variant: 'success'
+    });
+  });
+</script>
+
+</div>
+
 To show a message, call the API after the toast module has initialized:
 
 ```js

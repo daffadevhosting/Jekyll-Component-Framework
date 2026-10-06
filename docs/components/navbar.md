@@ -19,6 +19,16 @@ The default layout already includes the navbar. To use it in another layout:
 %}{% endraw %}
 ```
 
+## Example
+
+The default navbar is visible at the top of this page. This standalone example uses its own mobile menu id.
+
+<div class="docs-component-example">
+
+{% include components/navbar.html brand="Acme" brand_url="/" elevated=true menu_id="docs-navbar-mobile-menu" %}
+
+</div>
+
 ## Parameters
 
 | Parameter | Type | Default | Description |
@@ -27,6 +37,7 @@ The default layout already includes the navbar. To use it in another layout:
 | `brand_url` | string | `/` | Brand link |
 | `transparent` | boolean | `false` | Applies the transparent style |
 | `elevated` | boolean | `false` | Applies the elevated shadow style |
+| `menu_id` | string | `mobile-menu` | Unique id for the mobile navigation menu |
 | `class` | string | — | Additional CSS classes |
 
 ## Navigation data

@@ -14,8 +14,14 @@ Adds descriptive text to a short piece of inline content. Pass the wrapped marku
 {% include components/tooltip.html text="More information" content=help_label %}{% endraw %}
 ```
 
-{% capture tooltip_example %}<button type="button" class="c-button c-button--ghost c-button--md">Help</button>{% endcapture %}
-{% include components/tooltip.html text="More information" content=tooltip_example %}
+<div class="docs-component-example">
+
+  {% capture tooltip_example %}
+    {% include components/button.html label=site.data.demo.tooltip_example.label variant="ghost" %}
+  {% endcapture %}
+  {% include components/tooltip.html text=site.data.demo.tooltip_example.text position=site.data.demo.tooltip_example.position content=tooltip_example %}
+
+</div>
 
 ## Parameters
 

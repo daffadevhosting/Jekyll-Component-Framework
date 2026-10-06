@@ -6,11 +6,13 @@
   - brand_url   (string)
   - transparent (boolean)
   - elevated    (boolean)
+  - menu_id     (string)  → mobile menu id, default: mobile-menu
   - class       (string)
 {% endcomment %}
 
 {% assign brand = include.brand | default: site.title %}
 {% assign brand_url = include.brand_url | default: "/" %}
+{% assign mobile_menu_id = include.menu_id | default: "mobile-menu" %}
 
 {% capture nav_classes %}
   c-navbar
@@ -46,7 +48,7 @@
           class="c-navbar__toggle"
           aria-label="Toggle menu"
           aria-expanded="false"
-          aria-controls="mobile-menu"
+          aria-controls="{{ mobile_menu_id }}"
           data-navbar-toggle
         >
           {% include icon.html name="menu" %}
@@ -54,7 +56,7 @@
       </div>
     </div>
 
-    <div class="c-navbar__mobile" id="mobile-menu" hidden>
+    <div class="c-navbar__mobile" id="{{ mobile_menu_id }}" hidden>
       <nav aria-label="Mobile navigation">
         {% for item in site.data.navigation.main %}
           <a

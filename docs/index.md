@@ -49,4 +49,4 @@ Open [http://localhost:4000](http://localhost:4000).
 - [Installation](/docs/installation/)
 - [Customization](/docs/customization/)
 - [Layout Primitives](/docs/components/layout-primitives/)
-- [Components](/docs/components/button/)
+- [Components](/docs/components/)

@@ -18,6 +18,14 @@ Accessible button-triggered menu. JavaScript handles toggle, keyboard interactio
 %}{% endraw %}
 ```
 
+## Example
+
+<div class="docs-component-example">
+
+{% include components/dropdown.html id="docs-account-menu" label="Account" size="md" items=site.data.demo.dropdown_items align="right" %}
+
+</div>
+
 ## Parameters
 
 | Parameter | Type | Default | Description |
@@ -40,3 +48,5 @@ dropdown_items:
   - label: Sign out
     danger: true
 ```
+
+The rendered example above also demonstrates a label-only item and a disabled action.

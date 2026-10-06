@@ -14,6 +14,64 @@ button_group:
   - label: Month
   - label: Year
 
+dropdown_items:
+  - label: Account
+    label_only: true
+  - label: Profile
+    href: /docs/components/avatar/
+  - label: Preferences
+    href: /docs/components/theme-toggle/
+  - divider: true
+  - label: Disabled action
+    disabled: true
+  - label: Sign out
+    danger: true
+
+select_options:
+  - value: basic
+    label: Basic
+  - value: pro
+    label: Pro
+  - value: enterprise
+    label: Enterprise
+
+accordion_items:
+  - title: Can I customize the component styles?
+    content: Yes. Override the design tokens or add your own classes to customize the components.
+    open: true
+  - title: Do the components work without JavaScript?
+    content: Most components are rendered with HTML and CSS. Interactive components use JavaScript for their enhanced behavior.
+
+tab_items:
+  - label: Overview
+    content: View a summary of your account and recent activity.
+  - label: Security
+    content: Manage your password and other account security settings.
+  - label: Notifications
+    content: Choose which notifications you would like to receive.
+
+badge_examples:
+  - label: Active
+    variant: success
+    dot: true
+  - label: In review
+    variant: warning
+  - label: Draft
+    variant: neutral
+    badge_size: sm
+
+tooltip_example:
+  label: Help
+  text: More information about this setting.
+  position: top
+
+modal_example:
+  id: docs-modal
+  trigger_label: Open demo modal
+  title: Confirm changes
+  body: Review your changes before continuing.
+  size: md
+
 blog_breadcrumb:
   - label: Home
     url: /

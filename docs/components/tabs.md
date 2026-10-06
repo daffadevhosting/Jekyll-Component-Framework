@@ -21,6 +21,14 @@ Tabbed interface following the WAI-ARIA Tabs pattern.
 
 Each item: `{ label, content, disabled }`.
 
+## Example
+
+<div class="docs-component-example">
+
+{% include components/tabs.html id="docs-settings-tabs" items=site.data.demo.tab_items aria_label="Account settings" %}
+
+</div>
+
 ## Parameters
 
 | Parameter | Type | Default | Description |
