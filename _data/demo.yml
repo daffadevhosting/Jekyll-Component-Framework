@@ -18,3 +18,4 @@ blog_breadcrumb:
   - label: Home
     url: /
   - label: Blog
+    url: /examples/blog/
