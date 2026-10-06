@@ -17,6 +17,10 @@ markdown: kramdown
 permalink: /:categories/:title/
 timezone: Asia/Jakarta
 
+# Keep SCSS imports resolvable by GitHub Pages' Sass converter.
+sass:
+  sass_dir: assets/scss
+
 # Collections
 collections:
   docs:
