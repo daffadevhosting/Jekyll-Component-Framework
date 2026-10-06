@@ -38,7 +38,7 @@ main:
   - title: Docs
     url: /docs/
   - title: Blog
-    url: /blog/
+    url: /examples/blog/
 ```
 
 The component marks the current page using `page.url`. The mobile toggle exposes its expanded state and is enhanced by the navbar JavaScript module.

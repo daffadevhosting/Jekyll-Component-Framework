@@ -9,7 +9,7 @@ permalink: /docs/components/forms/
 
 Native form controls with consistent styling, labels, hints, and error states.
 
-See the dedicated pages for [Input](/docs/components/input/), [Textarea](/docs/components/textarea/), [Select](/docs/components/select/), [Checkbox](/docs/components/checkbox/), and [Radio](/docs/components/radio/).
+See the dedicated pages for [Input]({{ "/docs/components/input/" | relative_url }}), [Textarea]({{ "/docs/components/textarea/" | relative_url }}), [Select]({{ "/docs/components/select/" | relative_url }}), [Checkbox]({{ "/docs/components/checkbox/" | relative_url }}), and [Radio]({{ "/docs/components/radio/" | relative_url }}).
 
 ## Input
 
