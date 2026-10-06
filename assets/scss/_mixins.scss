@@ -2,8 +2,6 @@
 // Mixins
 // =============================================================================
 
-@use "sass:map";
-
 // Responsive breakpoints (mobile-first)
 $breakpoints: (
   sm: 640px,
@@ -14,8 +12,8 @@ $breakpoints: (
 );
 
 @mixin respond-to($breakpoint) {
-  @if map.has-key($breakpoints, $breakpoint) {
-    @media (min-width: map.get($breakpoints, $breakpoint)) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
       @content;
     }
   } @else {
