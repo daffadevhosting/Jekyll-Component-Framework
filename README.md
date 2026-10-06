@@ -38,7 +38,7 @@ Designed as the foundation for commercial Jekyll templates (SaaS, Portfolio, Blo
 ## Installation
 
 ```bash
-git clone <repo-url> jekyll-component-framework
+git clone https://github.com/daffadevhosting/jekyll-component-framework.git
 cd jekyll-component-framework
 bundle install
 ```

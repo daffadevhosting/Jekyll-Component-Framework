@@ -10,7 +10,7 @@ permalink: /docs/installation/
 ## Clone & install
 
 ```bash
-git clone <repo-url> jekyll-component-framework
+git clone https://github.com/daffadevhosting/jekyll-component-framework.git
 cd jekyll-component-framework
 bundle install
 ```
