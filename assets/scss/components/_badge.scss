@@ -4,6 +4,7 @@
 
 .c-badge {
   display: inline-flex;
+  width: fit-content;
   align-items: center;
   gap: var(--space-1);
   padding: 0.125rem 0.5rem;
