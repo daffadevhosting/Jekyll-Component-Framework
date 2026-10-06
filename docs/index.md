@@ -46,7 +46,14 @@ Open [http://localhost:4000](http://localhost:4000).
 
 ## Next steps
 
+<<<<<<< HEAD
 - [Installation](/docs/installation/)
 - [Customization](/docs/customization/)
 - [Layout Primitives](/docs/components/layout-primitives/)
 - [Components](/docs/components/)
+=======
+- [Installation]({{ "/docs/installation/" | relative_url }})
+- [Customization]({{ "/docs/customization/" | relative_url }})
+- [Layout Primitives]({{ "/docs/components/layout-primitives/" | relative_url }})
+- [Components]({{ "/docs/components/button/" | relative_url }})
+>>>>>>> refs/remotes/origin/master

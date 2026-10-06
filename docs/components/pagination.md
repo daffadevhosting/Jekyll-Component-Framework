@@ -13,11 +13,12 @@ Provides previous/next links and a compact range of page links. It renders only 
 {% raw %}{% include components/pagination.html
    current=3
    total=8
-   base_url="/blog"
+   base_url="/examples/blog"
+   demo=true
 %}{% endraw %}
 ```
 
-{% include components/pagination.html current=3 total=8 base_url="/blog" %}
+{% include components/pagination.html current=3 total=8 base_url="/examples/blog" demo=true %}
 
 ## Parameters
 
@@ -26,8 +27,9 @@ Provides previous/next links and a compact range of page links. It renders only 
 | `current` | number | `1` | Current page, one-based |
 | `total` | number | `1` | Total page count |
 | `base_url` | string | — | Base path; page one uses the base path and later pages use `/page/N/` |
+| `demo` | boolean | `false` | When true, links use `#` so demos do not 404 |
 | `size` | string | `md` | `sm`, `md`, `lg` |
 | `aria_label` | string | `Pagination` | Accessible navigation name |
 | `class` | string | — | Additional CSS classes |
 
-For Jekyll pagination, pass `paginator.page` and `paginator.total_pages`.
+For Jekyll pagination, pass `paginator.page` and `paginator.total_pages`. Set `demo=true` only on documentation or playground pages.

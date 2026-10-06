@@ -57,4 +57,4 @@ Primary landing section with title, subtitle, actions, and optional media.
 | `variant` | `default` or `split` |
 | `heading_level` | Heading level from `1` to `6`; defaults to `1` |
 
-See live usage on the [SaaS example](/examples/saas/) and [Portfolio example](/examples/portfolio/).
+See live usage on the [SaaS example]({{ "/examples/saas/" | relative_url }}) and [Portfolio example]({{ "/examples/portfolio/" | relative_url }}).

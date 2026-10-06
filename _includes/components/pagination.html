@@ -4,8 +4,9 @@
   Parameters:
   - current     (number)  → current page (1-based)
   - total       (number)  → total pages
-  - base_url    (string)  → e.g. /blog/page
+  - base_url    (string)  → e.g. /blog
   - size        (string)  → sm|md|lg
+  - demo        (boolean) → if true, links use href="#" (for docs/playground demos)
   - class       (string)
 
   For Jekyll paginator, pass:
@@ -18,6 +19,7 @@
 {% assign total = include.total | default: 1 | plus: 0 %}
 {% assign size = include.size | default: "md" %}
 {% assign base = include.base_url | default: "" %}
+{% assign is_demo = include.demo | default: false %}
 
 {% if total > 1 %}
 <nav
@@ -29,15 +31,18 @@
     <li class="c-pagination__item">
       {% if current > 1 %}
         {% assign prev = current | minus: 1 %}
-        {% if prev == 1 %}
+        {% if is_demo %}
+          {% assign prev_url = "#" %}
+        {% elsif prev == 1 %}
           {% assign prev_url = base | append: "/" %}
         {% else %}
           {% assign prev_url = base | append: "/page/" | append: prev | append: "/" %}
         {% endif %}
         <a
-          href="{{ prev_url | relative_url }}"
+          href="{% if is_demo %}#{% else %}{{ prev_url | relative_url }}{% endif %}"
           class="c-pagination__link"
           aria-label="Previous page"
+          {% if is_demo %}tabindex="-1"{% endif %}
         >
           {% include icon.html name="arrow-left" %}
         </a>
@@ -65,18 +70,24 @@
           {% if page_num == current %}
             <span class="c-pagination__link" aria-current="page">{{ page_num }}</span>
           {% else %}
-            {% if page_num == 1 %}
+            {% if is_demo %}
+              {% assign page_url = "#" %}
+            {% elsif page_num == 1 %}
               {% assign page_url = base | append: "/" %}
             {% else %}
               {% assign page_url = base | append: "/page/" | append: page_num | append: "/" %}
             {% endif %}
-            <a href="{{ page_url | relative_url }}" class="c-pagination__link" aria-label="Page {{ page_num }}">
+            <a
+              href="{% if is_demo %}#{% else %}{{ page_url | relative_url }}{% endif %}"
+              class="c-pagination__link"
+              aria-label="Page {{ page_num }}"
+              {% if is_demo %}tabindex="-1"{% endif %}
+            >
               {{ page_num }}
             </a>
           {% endif %}
         </li>
       {% else %}
-        {%- comment -%} Show ellipsis only once between ranges {%- endcomment -%}
         {% assign prev_show = false %}
         {% assign prev_num = page_num | minus: 1 %}
         {% if prev_num == 1 or prev_num == total %}
@@ -98,11 +109,16 @@
     <li class="c-pagination__item">
       {% if current < total %}
         {% assign next = current | plus: 1 %}
-        {% assign next_url = base | append: "/page/" | append: next | append: "/" %}
+        {% if is_demo %}
+          {% assign next_url = "#" %}
+        {% else %}
+          {% assign next_url = base | append: "/page/" | append: next | append: "/" %}
+        {% endif %}
         <a
-          href="{{ next_url | relative_url }}"
+          href="{% if is_demo %}#{% else %}{{ next_url | relative_url }}{% endif %}"
           class="c-pagination__link"
           aria-label="Next page"
+          {% if is_demo %}tabindex="-1"{% endif %}
         >
           {% include icon.html name="arrow-right" %}
         </a>
