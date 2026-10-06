@@ -4,13 +4,13 @@
 
 title: Jekyll Component Framework
 description: Production-ready modular UI component framework for Jekyll
-url: "" # Set in production (e.g. https://example.com)
-baseurl: "" # Set if deploying to a subdirectory
+url: "https://daffadevhosting.github.io" # Set in production (e.g. https://example.com)
+baseurl: "/jekyll-component-framework" # Set if deploying to a subdirectory
 
 # Author
 author:
-  name: Jekyll Component Framework
-  email: ""
+  name: Daffa Dev
+  email: "daffa@dev.com"
 
 # Build settings
 markdown: kramdown
