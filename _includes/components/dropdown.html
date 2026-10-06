@@ -1,0 +1,71 @@
+{% comment %}
+  Dropdown Component
+
+  Parameters:
+  - id          (string, required)
+  - label       (string) → trigger button label
+  - variant     (string) → button variant, default: outline
+  - size        (string)
+  - items       (array of {label, href, danger, divider, disabled})
+  - align       (string) → left|right, default: left
+  - class       (string)
+{% endcomment %}
+
+{% assign dropdown_id = include.id %}
+{% assign variant = include.variant | default: "outline" %}
+{% assign size = include.size | default: "md" %}
+{% assign align = include.align | default: "left" %}
+
+<div class="c-dropdown {{ include.class }}" data-dropdown>
+  <button
+    type="button"
+    class="c-button c-button--{{ variant }} c-button--{{ size }}"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="{{ dropdown_id }}-menu"
+    id="{{ dropdown_id }}-trigger"
+    data-dropdown-trigger
+  >
+    {{ include.label }}
+    <span class="c-button__icon" aria-hidden="true">
+      {% include icon.html name="chevron-down" %}
+    </span>
+  </button>
+
+  <div
+    class="c-dropdown__menu{% if align == 'right' %} c-dropdown__menu--right{% endif %}"
+    id="{{ dropdown_id }}-menu"
+    role="menu"
+    aria-labelledby="{{ dropdown_id }}-trigger"
+    hidden
+    data-dropdown-menu
+  >
+    {% for item in include.items %}
+      {% if item.divider %}
+        <hr class="c-dropdown__divider" role="separator">
+      {% elsif item.label_only %}
+        <div class="c-dropdown__label">{{ item.label }}</div>
+      {% else %}
+        {% if item.href %}
+          <a
+            href="{{ item.href | relative_url }}"
+            class="c-dropdown__item{% if item.danger %} c-dropdown__item--danger{% endif %}"
+            role="menuitem"
+            {% if item.disabled %}aria-disabled="true" tabindex="-1"{% endif %}
+          >
+            {{ item.label }}
+          </a>
+        {% else %}
+          <button
+            type="button"
+            class="c-dropdown__item{% if item.danger %} c-dropdown__item--danger{% endif %}"
+            role="menuitem"
+            {% if item.disabled %}disabled{% endif %}
+          >
+            {{ item.label }}
+          </button>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,55 @@
+hero:
+  eyebrow: "Portfolio"
+  title: "Design systems & product interfaces"
+  subtitle: "I build accessible, performant interfaces with a focus on design systems and developer experience."
+  primary_label: "View Projects"
+  primary_href: "#projects"
+  secondary_label: "Contact"
+  secondary_href: "#contact"
+
+about:
+  title: "About"
+  body: "Frontend engineer specializing in design systems, static sites, and accessible UI. I care about clean architecture, thoughtful interaction design, and code that other developers enjoy using."
+  skills:
+    - "Jekyll / Liquid"
+    - "SCSS / Design Tokens"
+    - "Vanilla JavaScript"
+    - "Accessibility (WCAG)"
+    - "Design Systems"
+    - "Performance"
+
+projects:
+  title: "Selected work"
+  items:
+    - title: "Component Framework"
+      description: "Modular UI library for Jekyll with tokens, dark mode, and accessible interactive components."
+      tags: ["Jekyll", "SCSS", "a11y"]
+      url: "#"
+    - title: "SaaS Dashboard UI"
+      description: "Marketing site and simple dashboard patterns for a B2B analytics product."
+      tags: ["Landing", "Design System"]
+      url: "#"
+    - title: "Documentation Theme"
+      description: "Docs layout with sidebar navigation, code blocks, and breadcrumb patterns."
+      tags: ["Docs", "DX"]
+      url: "#"
+
+experience:
+  title: "Experience"
+  items:
+    - role: "Senior Frontend Engineer"
+      company: "Design Systems Co."
+      period: "2022 — Present"
+      description: "Lead component library and theming architecture across product teams."
+    - role: "UI Engineer"
+      company: "Startup Labs"
+      period: "2019 — 2022"
+      description: "Built marketing sites and internal tools with a focus on accessibility."
+
+contact:
+  title: "Let's work together"
+  subtitle: "Open to freelance projects and design system consulting."
+  primary_label: "Email me"
+  primary_href: "mailto:hello@example.com"
+  secondary_label: "GitHub"
+  secondary_href: "#"

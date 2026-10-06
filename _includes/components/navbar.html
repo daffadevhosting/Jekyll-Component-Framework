@@ -1,0 +1,70 @@
+{% comment %}
+  Navbar Component
+
+  Parameters:
+  - brand       (string)  → site name
+  - brand_url   (string)
+  - transparent (boolean)
+  - elevated    (boolean)
+  - class       (string)
+{% endcomment %}
+
+{% assign brand = include.brand | default: site.title %}
+{% assign brand_url = include.brand_url | default: "/" %}
+
+{% capture nav_classes %}
+  c-navbar
+  {% if include.transparent %}c-navbar--transparent{% endif %}
+  {% if include.elevated %}c-navbar--elevated{% endif %}
+  {{ include.class }}
+{% endcapture %}
+{% assign nav_classes = nav_classes | strip | strip_newlines | split: " " | compact | join: " " %}
+
+<header class="{{ nav_classes }}" role="banner">
+  <div class="l-container">
+    <div class="c-navbar__inner">
+      <a href="{{ brand_url | relative_url }}" class="c-navbar__brand">
+        {{ brand }}
+      </a>
+
+      <nav class="c-navbar__nav" aria-label="Main navigation">
+        {% for item in site.data.navigation.main %}
+          <a
+            href="{{ item.url | relative_url }}"
+            class="c-navbar__link{% if page.url == item.url %} c-navbar__link--active{% endif %}"
+          >
+            {{ item.title }}
+          </a>
+        {% endfor %}
+      </nav>
+
+      <div class="c-navbar__actions">
+        {% include components/theme-toggle.html %}
+
+        <button
+          type="button"
+          class="c-navbar__toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-navbar-toggle
+        >
+          {% include icon.html name="menu" %}
+        </button>
+      </div>
+    </div>
+
+    <div class="c-navbar__mobile" id="mobile-menu" hidden>
+      <nav aria-label="Mobile navigation">
+        {% for item in site.data.navigation.main %}
+          <a
+            href="{{ item.url | relative_url }}"
+            class="c-navbar__link{% if page.url == item.url %} c-navbar__link--active{% endif %}"
+          >
+            {{ item.title }}
+          </a>
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
+</header>

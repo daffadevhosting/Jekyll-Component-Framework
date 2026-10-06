@@ -1,0 +1,37 @@
+---
+layout: docs
+title: Accordion
+description: Accordion component documentation
+permalink: /docs/components/accordion/
+---
+
+# Accordion
+
+Expandable sections for FAQs and stacked content.
+
+## Usage
+
+```liquid
+{% raw %}{% include components/accordion.html
+   id="faq"
+   items=page.faq_items
+%}{% endraw %}
+```
+
+Each item: `{ title, content, open }`.
+
+## Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `id` | string | **Required.** Group id |
+| `items` | array | `{ title, content, open }` |
+| `class` | string | Extra classes |
+
+Add `data-accordion-multiple` on the root (via class wrapper or custom include) to allow multiple open panels. Default behavior closes other panels when one opens.
+
+## Accessibility
+
+- Triggers are real `<button>` elements
+- `aria-expanded` and `aria-controls` link trigger ↔ panel
+- Panels use `role="region"` and `aria-labelledby`

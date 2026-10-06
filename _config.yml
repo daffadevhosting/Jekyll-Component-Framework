@@ -1,0 +1,91 @@
+# =============================================================================
+# Jekyll Component Framework - Configuration
+# =============================================================================
+
+title: Jekyll Component Framework
+description: Production-ready modular UI component framework for Jekyll
+url: "" # Set in production (e.g. https://example.com)
+baseurl: "" # Set if deploying to a subdirectory
+
+# Author
+author:
+  name: Jekyll Component Framework
+  email: ""
+
+# Build settings
+markdown: kramdown
+permalink: /:categories/:title/
+timezone: Asia/Jakarta
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /docs/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "docs"
+      type: "docs"
+    values:
+      layout: "docs"
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - README.md
+  - LICENSE
+  - CHANGELOG.md
+  - CONTRIBUTING.md
+  - scripts
+  - examples
+
+# Include
+include:
+  - _pages
+
+# =============================================================================
+# Theme Configuration
+# =============================================================================
+theme_config:
+  # Primary brand color (can also be overridden via CSS variables)
+  primary_color: "#6366f1"
+  # Border radius scale: sm | md | lg | xl
+  radius: "md"
+  # Enable dark mode support
+  dark_mode: true
+  # Enable animation system
+  animations: true
+  # Default theme: light | dark | system
+  default_theme: "system"
+
+# SEO
+lang: en
+locale: en_US
+
+# Feed
+feed:
+  path: /feed.xml

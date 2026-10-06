@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}" data-theme="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  {% seo %}
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  {%- comment -%} Prevent flash of incorrect theme {%- endcomment -%}
+  <script>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var theme = stored || 'system';
+      var resolved = theme;
+      if (theme === 'system') {
+        resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', resolved === 'dark' ? 'dark' : 'light');
+      if (theme === 'system') {
+        document.documentElement.setAttribute('data-theme-preference', 'system');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="c-skip-link">Skip to main content</a>
+
+  {% include components/navbar.html %}
+
+  <main id="main-content" class="l-main" tabindex="-1">
+    {{ content }}
+  </main>
+
+  {% include partials/footer.html %}
+
+  {% include components/toast.html %}
+
+  <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% comment %}
+  Avatar Component
+
+  Parameters:
+  - src         (string)  → image URL
+  - alt         (string)
+  - initials    (string)  → fallback text
+  - size        (string)  → xs|sm|md|lg|xl, default: md
+  - shape       (string)  → circle|square, default: circle
+  - status      (string)  → online|offline|busy|away
+  - class       (string)
+  - id          (string)
+{% endcomment %}
+
+{% assign size = include.size | default: "md" %}
+{% assign shape = include.shape | default: "circle" %}
+
+{% capture avatar_classes %}
+  c-avatar
+  c-avatar--{{ size }}
+  {% if shape == "square" %}c-avatar--square{% endif %}
+  {% if include.status %}c-avatar--with-status{% endif %}
+  {{ include.class }}
+{% endcapture %}
+{% assign avatar_classes = avatar_classes | strip | strip_newlines | split: " " | compact | join: " " %}
+
+<span
+  class="{{ avatar_classes }}"
+  {% if include.id %}id="{{ include.id }}"{% endif %}
+  role="img"
+  {% if include.alt %}aria-label="{{ include.alt }}"{% elsif include.initials %}aria-label="{{ include.initials }}"{% endif %}
+>
+  {% if include.src %}
+    <img
+      src="{{ include.src | relative_url }}"
+      alt="{{ include.alt | default: '' }}"
+      loading="lazy"
+      decoding="async"
+    >
+  {% elsif include.initials %}
+    {{ include.initials | upcase | truncate: 2, "" }}
+  {% else %}
+    {% include icon.html name="user" %}
+  {% endif %}
+
+  {% if include.status %}
+    <span class="c-avatar__status c-avatar__status--{{ include.status }}" aria-hidden="true"></span>
+  {% endif %}
+</span>

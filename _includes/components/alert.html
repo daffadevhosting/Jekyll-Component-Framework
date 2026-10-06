@@ -1,0 +1,57 @@
+{% comment %}
+  Alert Component
+
+  Parameters:
+  - variant     (string)  → info|success|warning|danger|neutral, default: info
+  - title       (string)
+  - message     (string, required)
+  - dismissible (boolean)
+  - id          (string)
+  - class       (string)
+{% endcomment %}
+
+{% assign variant = include.variant | default: "info" %}
+
+{% capture alert_classes %}
+  c-alert
+  c-alert--{{ variant }}
+  {{ include.class }}
+{% endcapture %}
+{% assign alert_classes = alert_classes | strip | strip_newlines | split: " " | compact | join: " " %}
+
+<div
+  class="{{ alert_classes }}"
+  role="alert"
+  {% if include.id %}id="{{ include.id }}"{% endif %}
+>
+  <span class="c-alert__icon" aria-hidden="true">
+    {% case variant %}
+      {% when "success" %}
+        {% include icon.html name="check-circle" %}
+      {% when "warning" %}
+        {% include icon.html name="alert-triangle" %}
+      {% when "danger" %}
+        {% include icon.html name="alert-circle" %}
+      {% else %}
+        {% include icon.html name="info" %}
+    {% endcase %}
+  </span>
+
+  <div class="c-alert__content">
+    {% if include.title %}
+      <div class="c-alert__title">{{ include.title }}</div>
+    {% endif %}
+    <div class="c-alert__message">{{ include.message }}</div>
+  </div>
+
+  {% if include.dismissible %}
+    <button
+      type="button"
+      class="c-alert__close"
+      aria-label="Dismiss alert"
+      data-alert-dismiss
+    >
+      {% include icon.html name="x" %}
+    </button>
+  {% endif %}
+</div>

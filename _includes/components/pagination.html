@@ -1,0 +1,117 @@
+{% comment %}
+  Pagination Component
+
+  Parameters:
+  - current     (number)  → current page (1-based)
+  - total       (number)  → total pages
+  - base_url    (string)  → e.g. /blog/page
+  - size        (string)  → sm|md|lg
+  - class       (string)
+
+  For Jekyll paginator, pass:
+    current=paginator.page
+    total=paginator.total_pages
+    base_url="/blog"
+{% endcomment %}
+
+{% assign current = include.current | default: 1 | plus: 0 %}
+{% assign total = include.total | default: 1 | plus: 0 %}
+{% assign size = include.size | default: "md" %}
+{% assign base = include.base_url | default: "" %}
+
+{% if total > 1 %}
+<nav
+  class="c-pagination{% if size != 'md' %} c-pagination--{{ size }}{% endif %} {{ include.class }}"
+  aria-label="{{ include.aria_label | default: 'Pagination' }}"
+>
+  <ul class="c-pagination">
+    {%- comment -%} Previous {%- endcomment -%}
+    <li class="c-pagination__item">
+      {% if current > 1 %}
+        {% assign prev = current | minus: 1 %}
+        {% if prev == 1 %}
+          {% assign prev_url = base | append: "/" %}
+        {% else %}
+          {% assign prev_url = base | append: "/page/" | append: prev | append: "/" %}
+        {% endif %}
+        <a
+          href="{{ prev_url | relative_url }}"
+          class="c-pagination__link"
+          aria-label="Previous page"
+        >
+          {% include icon.html name="arrow-left" %}
+        </a>
+      {% else %}
+        <span class="c-pagination__link" aria-disabled="true" aria-label="Previous page">
+          {% include icon.html name="arrow-left" %}
+        </span>
+      {% endif %}
+    </li>
+
+    {%- comment -%} Page numbers with ellipsis {%- endcomment -%}
+    {% assign window = 1 %}
+    {% for page_num in (1..total) %}
+      {% assign show = false %}
+      {% if page_num == 1 or page_num == total %}
+        {% assign show = true %}
+      {% endif %}
+      {% assign diff = page_num | minus: current | abs %}
+      {% if diff <= window %}
+        {% assign show = true %}
+      {% endif %}
+
+      {% if show %}
+        <li class="c-pagination__item">
+          {% if page_num == current %}
+            <span class="c-pagination__link" aria-current="page">{{ page_num }}</span>
+          {% else %}
+            {% if page_num == 1 %}
+              {% assign page_url = base | append: "/" %}
+            {% else %}
+              {% assign page_url = base | append: "/page/" | append: page_num | append: "/" %}
+            {% endif %}
+            <a href="{{ page_url | relative_url }}" class="c-pagination__link" aria-label="Page {{ page_num }}">
+              {{ page_num }}
+            </a>
+          {% endif %}
+        </li>
+      {% else %}
+        {%- comment -%} Show ellipsis only once between ranges {%- endcomment -%}
+        {% assign prev_show = false %}
+        {% assign prev_num = page_num | minus: 1 %}
+        {% if prev_num == 1 or prev_num == total %}
+          {% assign prev_show = true %}
+        {% endif %}
+        {% assign prev_diff = prev_num | minus: current | abs %}
+        {% if prev_diff <= window %}
+          {% assign prev_show = true %}
+        {% endif %}
+        {% if prev_show %}
+          <li class="c-pagination__item">
+            <span class="c-pagination__ellipsis" aria-hidden="true">…</span>
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {%- comment -%} Next {%- endcomment -%}
+    <li class="c-pagination__item">
+      {% if current < total %}
+        {% assign next = current | plus: 1 %}
+        {% assign next_url = base | append: "/page/" | append: next | append: "/" %}
+        <a
+          href="{{ next_url | relative_url }}"
+          class="c-pagination__link"
+          aria-label="Next page"
+        >
+          {% include icon.html name="arrow-right" %}
+        </a>
+      {% else %}
+        <span class="c-pagination__link" aria-disabled="true" aria-label="Next page">
+          {% include icon.html name="arrow-right" %}
+        </span>
+      {% endif %}
+    </li>
+  </ul>
+</nav>
+{% endif %}

@@ -1,0 +1,65 @@
+{% comment %}
+  Hero Section
+
+  Parameters:
+  - eyebrow, title, subtitle
+  - primary_label, primary_href
+  - secondary_label, secondary_href
+  - media, media_alt
+  - variant (default|split)
+  - class
+{% endcomment %}
+
+{% assign variant = include.variant | default: "default" %}
+
+<section class="s-hero s-hero--{{ variant }} l-section {{ include.class }}">
+  <div class="l-container">
+    <div class="s-hero__inner">
+      <div class="s-hero__content">
+        {% if include.eyebrow %}
+          <p class="s-hero__eyebrow">{{ include.eyebrow }}</p>
+        {% endif %}
+
+        <h1 class="s-hero__title">{{ include.title }}</h1>
+
+        {% if include.subtitle %}
+          <p class="s-hero__subtitle">{{ include.subtitle }}</p>
+        {% endif %}
+
+        {% if include.primary_label or include.secondary_label %}
+          <div class="s-hero__actions">
+            {% if include.primary_label %}
+              {% include components/button.html
+                label=include.primary_label
+                href=include.primary_href
+                variant="primary"
+                size="lg"
+              %}
+            {% endif %}
+            {% if include.secondary_label %}
+              {% include components/button.html
+                label=include.secondary_label
+                href=include.secondary_href
+                variant="outline"
+                size="lg"
+              %}
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if include.media %}
+        <div class="s-hero__media">
+          <img
+            src="{{ include.media | relative_url }}"
+            alt="{{ include.media_alt | default: '' }}"
+            width="1200"
+            height="675"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

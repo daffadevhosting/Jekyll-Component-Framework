@@ -1,0 +1,61 @@
+{% comment %}
+  Tabs Component
+
+  Parameters:
+  - id          (string, required)
+  - items       (array of {label, content, disabled})
+  - variant     (string) → default|pills
+  - class       (string)
+{% endcomment %}
+
+{% assign tabs_id = include.id | default: "tabs" %}
+{% assign variant = include.variant | default: "default" %}
+
+{% capture tabs_classes %}
+  c-tabs
+  {% if variant == "pills" %}c-tabs--pills{% endif %}
+  {{ include.class }}
+{% endcapture %}
+{% assign tabs_classes = tabs_classes | strip | strip_newlines | split: " " | compact | join: " " %}
+
+<div class="{{ tabs_classes }}" data-tabs id="{{ tabs_id }}">
+  <div class="c-tabs__list" role="tablist" aria-label="{{ include.aria_label | default: 'Tabs' }}">
+    {% for item in include.items %}
+      {% assign tab_id = tabs_id | append: "-tab-" | append: forloop.index %}
+      {% assign panel_id = tabs_id | append: "-panel-" | append: forloop.index %}
+      {% assign is_first = forloop.first %}
+
+      <button
+        type="button"
+        class="c-tabs__tab"
+        role="tab"
+        id="{{ tab_id }}"
+        aria-selected="{{ is_first }}"
+        aria-controls="{{ panel_id }}"
+        tabindex="{% if is_first %}0{% else %}-1{% endif %}"
+        {% if item.disabled %}disabled{% endif %}
+        data-tabs-tab
+      >
+        {{ item.label }}
+      </button>
+    {% endfor %}
+  </div>
+
+  {% for item in include.items %}
+    {% assign tab_id = tabs_id | append: "-tab-" | append: forloop.index %}
+    {% assign panel_id = tabs_id | append: "-panel-" | append: forloop.index %}
+    {% assign is_first = forloop.first %}
+
+    <div
+      class="c-tabs__panel"
+      role="tabpanel"
+      id="{{ panel_id }}"
+      aria-labelledby="{{ tab_id }}"
+      tabindex="0"
+      {% unless is_first %}hidden{% endunless %}
+      data-tabs-panel
+    >
+      {{ item.content }}
+    </div>
+  {% endfor %}
+</div>

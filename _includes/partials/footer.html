@@ -1,0 +1,33 @@
+<footer class="c-footer" role="contentinfo">
+  <div class="l-container">
+    <div class="c-footer__inner">
+      <p class="c-footer__copyright t-small t-muted">
+        {{ site.data.site.footer.copyright }}
+      </p>
+      <nav class="c-footer__nav" aria-label="Footer">
+        {% for link in site.data.site.footer.links %}
+          <a href="{{ link.url | relative_url }}" class="t-link t-small">{{ link.title }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .c-footer {
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-8);
+    margin-top: var(--space-16);
+  }
+  .c-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+  .c-footer__nav {
+    display: flex;
+    gap: var(--space-4);
+  }
+</style>

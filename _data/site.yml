@@ -1,0 +1,20 @@
+# Site-wide data
+name: Jekyll Component Framework
+tagline: Production-ready modular UI components for Jekyll
+description: A lightweight, accessible, and customizable component framework built with Jekyll, Liquid, SCSS, and Vanilla JavaScript.
+
+# Social
+social:
+  twitter: ""
+  github: ""
+
+# Footer
+footer:
+  copyright: "© 2025 Jekyll Component Framework. MIT License."
+  links:
+    - title: Documentation
+      url: /docs/
+    - title: Components
+      url: /docs/components/
+    - title: GitHub
+      url: "#"

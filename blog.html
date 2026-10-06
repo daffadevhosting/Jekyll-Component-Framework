@@ -1,0 +1,49 @@
+---
+layout: default
+title: Blog Example
+description: Blog listing example built with Jekyll Component Framework
+permalink: /examples/blog/
+---
+
+{% assign data = site.data.blog %}
+
+<section class="l-section">
+  <div class="l-container l-container--md">
+    <div class="l-stack l-stack--md u-mb-8">
+      {% include components/breadcrumb.html items=site.data.demo.blog_breadcrumb %}
+      <h1 class="t-h1">{{ data.title }}</h1>
+      <p class="t-lead">{{ data.description }}</p>
+    </div>
+
+    <div class="l-stack l-stack--lg">
+      {% for post in data.posts %}
+        <article class="c-card c-card--hoverable">
+          <div class="c-card__body">
+            <div class="l-stack l-stack--sm">
+              <div class="u-flex u-gap-3 u-items-center u-flex-wrap">
+                {% include components/badge.html label=post.category variant="primary" size="sm" %}
+                <time class="t-caption" datetime="{{ post.date }}">{{ post.date }}</time>
+              </div>
+              <h2 class="c-card__title">
+                <a href="{{ post.url | relative_url }}" class="t-link">{{ post.title }}</a>
+              </h2>
+              <p class="t-small t-muted">{{ post.excerpt }}</p>
+              {% include components/button.html
+                label="Read more"
+                href=post.url
+                variant="ghost"
+                size="sm"
+                icon="arrow-right"
+                icon_position="right"
+              %}
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="u-mt-12">
+      {% include components/pagination.html current=1 total=3 base_url="/examples/blog" %}
+    </div>
+  </div>
+</section>

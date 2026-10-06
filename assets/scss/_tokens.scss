@@ -1,0 +1,276 @@
+// =============================================================================
+// Design Tokens
+// Centralized design system tokens via CSS Custom Properties
+// Override these in your project to rebrand the entire framework
+// =============================================================================
+
+:root {
+  // ---------------------------------------------------------------------------
+  // Color Palette - Brand
+  // ---------------------------------------------------------------------------
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-primary-active: #4338ca;
+  --color-primary-subtle: #eef2ff;
+
+  --color-secondary: #64748b;
+  --color-secondary-hover: #475569;
+  --color-secondary-active: #334155;
+  --color-secondary-subtle: #f1f5f9;
+
+  // ---------------------------------------------------------------------------
+  // Color Palette - Semantic
+  // ---------------------------------------------------------------------------
+  --color-success: #16a34a;
+  --color-success-hover: #15803d;
+  --color-success-subtle: #f0fdf4;
+
+  --color-warning: #d97706;
+  --color-warning-hover: #b45309;
+  --color-warning-subtle: #fffbeb;
+
+  --color-danger: #dc2626;
+  --color-danger-hover: #b91c1c;
+  --color-danger-subtle: #fef2f2;
+
+  --color-info: #0284c7;
+  --color-info-hover: #0369a1;
+  --color-info-subtle: #f0f9ff;
+
+  // ---------------------------------------------------------------------------
+  // Color Palette - Surface & Text
+  // ---------------------------------------------------------------------------
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-overlay: rgb(15 23 42 / 0.5);
+
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #94a3b8;
+  --color-text-inverse: #ffffff;
+
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+  --color-border-subtle: #f1f5f9;
+
+  --color-focus-ring: #6366f1;
+  --color-focus-ring-offset: #ffffff;
+
+  // ---------------------------------------------------------------------------
+  // Typography
+  // ---------------------------------------------------------------------------
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --font-size-xs: 0.75rem;    // 12px
+  --font-size-sm: 0.875rem;   // 14px
+  --font-size-base: 1rem;     // 16px
+  --font-size-lg: 1.125rem;   // 18px
+  --font-size-xl: 1.25rem;    // 20px
+  --font-size-2xl: 1.5rem;    // 24px
+  --font-size-3xl: 1.875rem;  // 30px
+  --font-size-4xl: 2.25rem;   // 36px
+  --font-size-5xl: 3rem;      // 48px
+  --font-size-6xl: 3.75rem;   // 60px
+
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+
+  // ---------------------------------------------------------------------------
+  // Spacing Scale (4px base)
+  // ---------------------------------------------------------------------------
+  --space-0: 0;
+  --space-1: 0.25rem;   // 4px
+  --space-2: 0.5rem;    // 8px
+  --space-3: 0.75rem;   // 12px
+  --space-4: 1rem;      // 16px
+  --space-5: 1.25rem;   // 20px
+  --space-6: 1.5rem;    // 24px
+  --space-8: 2rem;      // 32px
+  --space-10: 2.5rem;   // 40px
+  --space-12: 3rem;     // 48px
+  --space-16: 4rem;     // 64px
+  --space-20: 5rem;     // 80px
+  --space-24: 6rem;     // 96px
+
+  // ---------------------------------------------------------------------------
+  // Border Radius
+  // ---------------------------------------------------------------------------
+  --radius-none: 0;
+  --radius-sm: 0.375rem;   // 6px
+  --radius-md: 0.625rem;   // 10px
+  --radius-lg: 1rem;       // 16px
+  --radius-xl: 1.5rem;     // 24px
+  --radius-2xl: 2rem;      // 32px
+  --radius-full: 9999px;
+
+  // ---------------------------------------------------------------------------
+  // Shadows
+  // ---------------------------------------------------------------------------
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.1), 0 1px 2px rgb(0 0 0 / 0.06);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.08);
+  --shadow-lg: 0 12px 30px rgb(0 0 0 / 0.12);
+  --shadow-xl: 0 20px 40px rgb(0 0 0 / 0.15);
+  --shadow-inner: inset 0 2px 4px rgb(0 0 0 / 0.05);
+  --shadow-focus: 0 0 0 3px rgb(99 102 241 / 0.35);
+
+  // ---------------------------------------------------------------------------
+  // Container Widths
+  // ---------------------------------------------------------------------------
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+
+  // ---------------------------------------------------------------------------
+  // Z-Index Scale
+  // ---------------------------------------------------------------------------
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+
+  // ---------------------------------------------------------------------------
+  // Transitions
+  // ---------------------------------------------------------------------------
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-theme: 200ms ease;
+
+  // ---------------------------------------------------------------------------
+  // Focus
+  // ---------------------------------------------------------------------------
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+}
+
+// =============================================================================
+// Dark Theme
+// =============================================================================
+[data-theme="dark"] {
+  --color-primary: #818cf8;
+  --color-primary-hover: #a5b4fc;
+  --color-primary-active: #c7d2fe;
+  --color-primary-subtle: #1e1b4b;
+
+  --color-secondary: #94a3b8;
+  --color-secondary-hover: #cbd5e1;
+  --color-secondary-active: #e2e8f0;
+  --color-secondary-subtle: #1e293b;
+
+  --color-success: #22c55e;
+  --color-success-hover: #4ade80;
+  --color-success-subtle: #052e16;
+
+  --color-warning: #f59e0b;
+  --color-warning-hover: #fbbf24;
+  --color-warning-subtle: #451a03;
+
+  --color-danger: #ef4444;
+  --color-danger-hover: #f87171;
+  --color-danger-subtle: #450a0a;
+
+  --color-info: #0ea5e9;
+  --color-info-hover: #38bdf8;
+  --color-info-subtle: #0c4a6e;
+
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-elevated: #334155;
+  --color-overlay: rgb(0 0 0 / 0.7);
+
+  --color-text: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-text-subtle: #64748b;
+  --color-text-inverse: #0f172a;
+
+  --color-border: #334155;
+  --color-border-strong: #475569;
+  --color-border-subtle: #1e293b;
+
+  --color-focus-ring: #818cf8;
+  --color-focus-ring-offset: #0f172a;
+
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.4), 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 12px 30px rgb(0 0 0 / 0.5);
+  --shadow-xl: 0 20px 40px rgb(0 0 0 / 0.6);
+  --shadow-focus: 0 0 0 3px rgb(129 140 248 / 0.4);
+}
+
+// System preference fallback (when data-theme="system")
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-primary: #818cf8;
+    --color-primary-hover: #a5b4fc;
+    --color-primary-active: #c7d2fe;
+    --color-primary-subtle: #1e1b4b;
+
+    --color-secondary: #94a3b8;
+    --color-secondary-hover: #cbd5e1;
+    --color-secondary-active: #e2e8f0;
+    --color-secondary-subtle: #1e293b;
+
+    --color-success: #22c55e;
+    --color-success-hover: #4ade80;
+    --color-success-subtle: #052e16;
+
+    --color-warning: #f59e0b;
+    --color-warning-hover: #fbbf24;
+    --color-warning-subtle: #451a03;
+
+    --color-danger: #ef4444;
+    --color-danger-hover: #f87171;
+    --color-danger-subtle: #450a0a;
+
+    --color-info: #0ea5e9;
+    --color-info-hover: #38bdf8;
+    --color-info-subtle: #0c4a6e;
+
+    --color-background: #0f172a;
+    --color-surface: #1e293b;
+    --color-surface-elevated: #334155;
+    --color-overlay: rgb(0 0 0 / 0.7);
+
+    --color-text: #f8fafc;
+    --color-text-muted: #94a3b8;
+    --color-text-subtle: #64748b;
+    --color-text-inverse: #0f172a;
+
+    --color-border: #334155;
+    --color-border-strong: #475569;
+    --color-border-subtle: #1e293b;
+
+    --color-focus-ring: #818cf8;
+    --color-focus-ring-offset: #0f172a;
+
+    --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.3);
+    --shadow-sm: 0 1px 3px rgb(0 0 0 / 0.4), 0 1px 2px rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 12px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 12px 30px rgb(0 0 0 / 0.5);
+    --shadow-xl: 0 20px 40px rgb(0 0 0 / 0.6);
+    --shadow-focus: 0 0 0 3px rgb(129 140 248 / 0.4);
+  }
+}

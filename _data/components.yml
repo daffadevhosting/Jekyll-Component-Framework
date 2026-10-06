@@ -1,0 +1,119 @@
+components:
+  foundation:
+    - name: Container
+      slug: container
+      status: stable
+    - name: Stack
+      slug: stack
+      status: stable
+    - name: Grid
+      slug: grid
+      status: stable
+    - name: Divider
+      slug: divider
+      status: stable
+    - name: Icon
+      slug: icon
+      status: stable
+
+  navigation:
+    - name: Navbar
+      slug: navbar
+      status: stable
+    - name: Breadcrumb
+      slug: breadcrumb
+      status: stable
+    - name: Pagination
+      slug: pagination
+      status: stable
+
+  actions:
+    - name: Button
+      slug: button
+      status: stable
+    - name: Button Group
+      slug: button-group
+      status: stable
+    - name: Dropdown
+      slug: dropdown
+      status: stable
+
+  content:
+    - name: Card
+      slug: card
+      status: stable
+    - name: Badge
+      slug: badge
+      status: stable
+    - name: Avatar
+      slug: avatar
+      status: stable
+    - name: Alert
+      slug: alert
+      status: stable
+    - name: Accordion
+      slug: accordion
+      status: stable
+    - name: Tabs
+      slug: tabs
+      status: stable
+    - name: Tooltip
+      slug: tooltip
+      status: stable
+    - name: Code
+      slug: code
+      status: stable
+
+  forms:
+    - name: Input
+      slug: input
+      status: stable
+    - name: Textarea
+      slug: textarea
+      status: stable
+    - name: Select
+      slug: select
+      status: stable
+    - name: Checkbox
+      slug: checkbox
+      status: stable
+    - name: Radio
+      slug: radio
+      status: stable
+
+  feedback:
+    - name: Modal
+      slug: modal
+      status: stable
+    - name: Toast
+      slug: toast
+      status: stable
+    - name: Spinner
+      slug: spinner
+      status: stable
+    - name: Progress
+      slug: progress
+      status: stable
+
+  marketing:
+    - name: Hero
+      slug: hero
+      status: stable
+    - name: Feature
+      slug: feature
+      status: stable
+    - name: Pricing Card
+      slug: pricing-card
+      status: stable
+    - name: Testimonial
+      slug: testimonial
+      status: stable
+    - name: CTA
+      slug: cta
+      status: stable
+    - name: FAQ
+      slug: faq
+      status: stable
+    - name: Newsletter
+      slug: newsletter
+      status: stable

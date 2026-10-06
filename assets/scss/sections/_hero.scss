@@ -1,0 +1,119 @@
+// =============================================================================
+// Hero Section
+// =============================================================================
+
+.s-hero {
+  padding-block: var(--space-16);
+
+  @include respond-to(md) {
+    padding-block: var(--space-20);
+  }
+
+  @include respond-to(lg) {
+    padding-block: var(--space-24);
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-8);
+  }
+
+  &__content {
+    max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  &__eyebrow {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+  }
+
+  &__title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--color-text);
+
+    @include respond-to(md) {
+      font-size: var(--font-size-5xl);
+    }
+
+    @include respond-to(lg) {
+      font-size: var(--font-size-6xl);
+    }
+  }
+
+  &__subtitle {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-muted);
+    max-width: 36rem;
+
+    @include respond-to(md) {
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+  }
+
+  &__media {
+    width: 100%;
+    max-width: 56rem;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--color-border);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // Split variant
+  &--split {
+    .s-hero__inner {
+      @include respond-to(lg) {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+        gap: var(--space-12);
+      }
+    }
+
+    .s-hero__content {
+      @include respond-to(lg) {
+        align-items: flex-start;
+        flex: 1;
+      }
+    }
+
+    .s-hero__actions {
+      @include respond-to(lg) {
+        justify-content: flex-start;
+      }
+    }
+
+    .s-hero__media {
+      @include respond-to(lg) {
+        flex: 1;
+        max-width: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,201 @@
+# Jekyll Component Framework
+
+**Production-ready modular UI component framework for Jekyll.**
+
+A lightweight, accessible, and customizable design system built with:
+
+- **Jekyll** + **Liquid**
+- **SCSS** + **CSS Custom Properties**
+- **Vanilla JavaScript** (ES modules)
+- **HTML5** semantic markup
+
+Designed as the foundation for commercial Jekyll templates (SaaS, Portfolio, Blog, Agency, Documentation, etc.).
+
+---
+
+## Features
+
+- Design Token System (easy rebranding)
+- Dark Mode (light / dark / system) with localStorage persistence
+- Accessible components (WCAG 2.2 AA principles)
+- Mobile-first responsive design
+- Minimal dependencies
+- Progressive enhancement
+- Component API via Liquid includes
+- Self-hosted documentation ready
+- Ready for GitHub Pages & Cloudflare Pages
+
+---
+
+## Requirements
+
+- Ruby >= 3.0
+- Bundler
+- Jekyll 4.3+
+
+---
+
+## Installation
+
+```bash
+git clone <repo-url> jekyll-component-framework
+cd jekyll-component-framework
+bundle install
+```
+
+---
+
+## Development
+
+```bash
+bundle exec jekyll serve
+```
+
+Open [http://localhost:4000](http://localhost:4000).
+
+---
+
+## Production Build
+
+```bash
+bundle exec jekyll build
+# or strict mode
+bundle exec jekyll build --strict
+```
+
+Output is generated in `_site/`.
+
+---
+
+## Project Structure
+
+```text
+jekyll-component-framework/
+├── _config.yml
+├── Gemfile
+├── _data/                  # Site data & navigation
+├── _includes/
+│   ├── components/         # Reusable UI components
+│   ├── sections/           # Marketing sections
+│   └── partials/
+├── _layouts/
+├── assets/
+│   ├── css/main.scss       # Entry point
+│   ├── scss/               # Design system
+│   │   ├── _tokens.scss
+│   │   ├── _mixins.scss
+│   │   ├── _reset.scss
+│   │   ├── _base.scss
+│   │   ├── _typography.scss
+│   │   ├── _utilities.scss
+│   │   ├── _animations.scss
+│   │   └── components/
+│   └── js/
+│       ├── main.js
+│       └── components/
+├── docs/
+├── examples/
+└── pages/
+```
+
+---
+
+## Component Usage
+
+```liquid
+{% include components/button.html
+   label="Get Started"
+   href="/pricing/"
+   variant="primary"
+   size="lg"
+   icon="arrow-right"
+   icon_position="right"
+%}
+```
+
+```liquid
+{% include components/card.html
+   title="Feature"
+   body="Description here"
+   elevated=true
+%}
+```
+
+```liquid
+{% include components/alert.html
+   variant="success"
+   title="Saved"
+   message="Your settings have been updated."
+%}
+```
+
+---
+
+## Theming & Customization
+
+Override CSS variables:
+
+```css
+:root {
+  --color-primary: #ff4d00;
+  --radius-md: 0.5rem;
+}
+```
+
+Or set `data-theme="dark"` / `data-theme="light"` on `<html>`.
+
+Theme preference is stored in `localStorage` under key `theme`.
+
+---
+
+## Dark Mode
+
+Supported modes:
+
+- `light`
+- `dark`
+- `system` (follows `prefers-color-scheme`)
+
+Toggle is included in the navbar. Flash of incorrect theme is prevented via an inline script in `<head>`.
+
+---
+
+## Adding a New Component
+
+1. Create `_includes/components/my-component.html`
+2. Create `assets/scss/components/_my-component.scss`
+3. Import the SCSS in `assets/css/main.scss`
+4. Add JavaScript (if needed) under `assets/js/components/`
+5. Document it under `docs/components/`
+
+Follow the existing BEM-inspired naming (`c-component`, `c-component--variant`).
+
+---
+
+## Deployment
+
+### GitHub Pages
+
+1. Push to a repository
+2. Enable GitHub Pages (branch: `gh-pages` or use GitHub Actions)
+3. Set `url` and `baseurl` in `_config.yml`
+
+### Cloudflare Pages
+
+1. Connect the repository
+2. Build command: `bundle exec jekyll build`
+3. Output directory: `_site`
+
+---
+
+## License
+
+MIT License — see [LICENSE](LICENSE).
+
+---
+
+## Status
+
+Foundation is complete. Core components (Button, Card, Alert, Badge, Avatar, Navbar, Theme Toggle) are implemented and production-ready.
+
+More components, documentation pages, and example templates will be added iteratively.

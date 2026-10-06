@@ -1,0 +1,41 @@
+---
+# Jekyll front matter — required for SCSS processing
+---
+
+@import "../scss/tokens";
+@import "../scss/mixins";
+@import "../scss/reset";
+@import "../scss/base";
+@import "../scss/typography";
+@import "../scss/utilities";
+@import "../scss/animations";
+
+// Components
+@import "../scss/components/button";
+@import "../scss/components/button-group";
+@import "../scss/components/card";
+@import "../scss/components/alert";
+@import "../scss/components/badge";
+@import "../scss/components/avatar";
+@import "../scss/components/navbar";
+@import "../scss/components/accordion";
+@import "../scss/components/tabs";
+@import "../scss/components/modal";
+@import "../scss/components/dropdown";
+@import "../scss/components/tooltip";
+@import "../scss/components/toast";
+@import "../scss/components/form";
+@import "../scss/components/spinner";
+@import "../scss/components/progress";
+@import "../scss/components/breadcrumb";
+@import "../scss/components/pagination";
+@import "../scss/components/code";
+
+// Sections
+@import "../scss/sections/hero";
+@import "../scss/sections/features";
+@import "../scss/sections/pricing";
+@import "../scss/sections/testimonials";
+@import "../scss/sections/faq";
+@import "../scss/sections/cta";
+@import "../scss/sections/newsletter";

@@ -1,0 +1,45 @@
+{% comment %}
+  Input Component
+
+  Parameters:
+  - name, id, type, label, placeholder, value, hint, error
+  - required, disabled, size (sm|md|lg)
+  - autocomplete, class
+{% endcomment %}
+
+{% assign input_id = include.id | default: include.name %}
+{% assign type = include.type | default: "text" %}
+{% assign size = include.size | default: "md" %}
+
+<div class="c-form-group {{ include.class }}">
+  {% if include.label %}
+    <label
+      for="{{ input_id }}"
+      class="c-label{% if include.required %} c-label--required{% endif %}"
+    >
+      {{ include.label }}
+    </label>
+  {% endif %}
+
+  <input
+    type="{{ type }}"
+    id="{{ input_id }}"
+    name="{{ include.name }}"
+    class="c-input{% if size != 'md' %} c-input--{{ size }}{% endif %}"
+    {% if include.placeholder %}placeholder="{{ include.placeholder }}"{% endif %}
+    {% if include.value %}value="{{ include.value }}"{% endif %}
+    {% if include.required %}required{% endif %}
+    {% if include.disabled %}disabled{% endif %}
+    {% if include.autocomplete %}autocomplete="{{ include.autocomplete }}"{% endif %}
+    {% if include.error %}aria-invalid="true" aria-describedby="{{ input_id }}-error"{% endif %}
+    {% if include.hint and include.error == nil %}aria-describedby="{{ input_id }}-hint"{% endif %}
+  >
+
+  {% if include.hint and include.error == nil %}
+    <p class="c-hint" id="{{ input_id }}-hint">{{ include.hint }}</p>
+  {% endif %}
+
+  {% if include.error %}
+    <p class="c-error" id="{{ input_id }}-error" role="alert">{{ include.error }}</p>
+  {% endif %}
+</div>

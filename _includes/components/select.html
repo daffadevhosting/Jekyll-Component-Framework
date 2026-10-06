@@ -1,0 +1,50 @@
+{% comment %}
+  Select Component
+
+  Parameters:
+  - options (array of {value, label, selected})
+{% endcomment %}
+
+{% assign input_id = include.id | default: include.name %}
+
+<div class="c-form-group {{ include.class }}">
+  {% if include.label %}
+    <label
+      for="{{ input_id }}"
+      class="c-label{% if include.required %} c-label--required{% endif %}"
+    >
+      {{ include.label }}
+    </label>
+  {% endif %}
+
+  <select
+    id="{{ input_id }}"
+    name="{{ include.name }}"
+    class="c-select"
+    {% if include.required %}required{% endif %}
+    {% if include.disabled %}disabled{% endif %}
+    {% if include.error %}aria-invalid="true"{% endif %}
+  >
+    {% if include.placeholder %}
+      <option value="" disabled {% unless include.value %}selected{% endunless %}>
+        {{ include.placeholder }}
+      </option>
+    {% endif %}
+    {% for opt in include.options %}
+      <option
+        value="{{ opt.value }}"
+        {% if opt.selected or opt.value == include.value %}selected{% endif %}
+      >
+        {{ opt.label }}
+      </option>
+    {% endfor %}
+  </select>
+
+  {% if include.hint and include.error == nil %}
+    <p class="c-hint">{{ include.hint }}</p>
+  {% endif %}
+
+  {% if include.error %}
+    <p class="c-error" role="alert">{{ include.error }}</p>
+  {% endif %}
+</div>

@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<article class="l-section">
+  <div class="l-container l-container--md">
+    <header class="l-stack l-stack--md u-mb-8">
+      {% if page.breadcrumb %}
+        {% include components/breadcrumb.html items=page.breadcrumb %}
+      {% endif %}
+
+      {% if page.category %}
+        {% include components/badge.html label=page.category variant="primary" size="sm" %}
+      {% endif %}
+
+      <h1 class="t-h1">{{ page.title }}</h1>
+
+      {% if page.date %}
+        <time class="t-small t-muted" datetime="{{ page.date | date: '%Y-%m-%d' }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+      {% endif %}
+
+      {% if page.description %}
+        <p class="t-lead">{{ page.description }}</p>
+      {% endif %}
+    </header>
+
+    <div class="l-stack l-stack--md post-content">
+      {{ content }}
+    </div>
+
+    <hr class="c-divider">
+
+    <nav class="u-flex u-justify-between u-flex-wrap u-gap-4" aria-label="Post navigation">
+      {% if page.previous_url %}
+        {% include components/button.html
+          label=page.previous_label
+          href=page.previous_url
+          variant="outline"
+          size="sm"
+          icon="arrow-left"
+        %}
+      {% else %}
+        <span></span>
+      {% endif %}
+      {% if page.next_url %}
+        {% include components/button.html
+          label=page.next_label
+          href=page.next_url
+          variant="outline"
+          size="sm"
+          icon="arrow-right"
+          icon_position="right"
+        %}
+      {% endif %}
+    </nav>
+  </div>
+</article>
+
+<style>
+  .post-content h2 { margin-top: var(--space-8); margin-bottom: var(--space-4); }
+  .post-content h3 { margin-top: var(--space-6); margin-bottom: var(--space-3); }
+  .post-content p { margin-bottom: var(--space-4); color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
+  .post-content ul, .post-content ol { margin-bottom: var(--space-4); padding-left: var(--space-6); color: var(--color-text-muted); }
+  .post-content li { margin-bottom: var(--space-2); }
+  .post-content ul { list-style: disc; }
+  .post-content ol { list-style: decimal; }
+</style>

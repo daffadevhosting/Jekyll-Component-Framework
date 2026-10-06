@@ -1,0 +1,182 @@
+---
+layout: default
+title: Home
+description: Production-ready modular UI component framework for Jekyll
+---
+
+<section class="l-section">
+  <div class="l-container">
+    <div class="l-stack l-stack--xl u-items-center t-center">
+      <div class="l-stack l-stack--md">
+        {% include components/badge.html label="v1.0.0 · Production Ready" variant="primary" %}
+        <h1 class="t-display">Jekyll Component Framework</h1>
+        <p class="t-lead" style="max-width: 36rem; margin-inline: auto;">
+          Modular, accessible, and performant UI components built with Jekyll, Liquid, SCSS, and Vanilla JavaScript.
+        </p>
+      </div>
+
+      <div class="u-flex u-gap-4 u-flex-wrap u-justify-center">
+        {% include components/button.html
+          label="Get Started"
+          href="/docs/"
+          variant="primary"
+          size="lg"
+          icon="arrow-right"
+          icon_position="right"
+        %}
+        {% include components/button.html
+          label="SaaS Example"
+          href="/examples/saas/"
+          variant="outline"
+          size="lg"
+        %}
+        {% include components/button.html
+          label="Portfolio"
+          href="/examples/portfolio/"
+          variant="ghost"
+          size="lg"
+        %}
+        {% include components/button.html
+          label="Blog"
+          href="/examples/blog/"
+          variant="ghost"
+          size="lg"
+        %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="l-section l-section--sm u-bg-surface">
+  <div class="l-container">
+    <div class="l-grid l-grid--cols-3">
+      {% include components/card.html
+        title="Design Tokens"
+        body="Centralized CSS Custom Properties. Change one variable and rebrand the entire system."
+        elevated=true
+      %}
+      {% include components/card.html
+        title="Accessible by Default"
+        body="Semantic HTML, keyboard navigation, ARIA where needed, and visible focus states."
+        elevated=true
+      %}
+      {% include components/card.html
+        title="Zero Framework Lock-in"
+        body="Pure Jekyll + Liquid + SCSS + Vanilla JS. No React, Vue, or build step required."
+        elevated=true
+      %}
+    </div>
+  </div>
+</section>
+
+<section class="l-section">
+  <div class="l-container l-container--md">
+    <div class="l-stack l-stack--lg">
+      <h2 class="t-h2 t-center">Component Preview</h2>
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Buttons</h3>
+        <div class="u-flex u-gap-3 u-flex-wrap">
+          {% include components/button.html label="Primary" variant="primary" %}
+          {% include components/button.html label="Secondary" variant="secondary" %}
+          {% include components/button.html label="Outline" variant="outline" %}
+          {% include components/button.html label="Ghost" variant="ghost" %}
+          {% include components/button.html label="Danger" variant="danger" %}
+          {% include components/button.html label="With Icon" variant="primary" icon="arrow-right" icon_position="right" %}
+        </div>
+      </div>
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Alerts</h3>
+        {% include components/alert.html variant="info" title="Info" message="This is an informational alert." %}
+        {% include components/alert.html variant="success" title="Success" message="Your changes have been saved." %}
+        {% include components/alert.html variant="warning" title="Warning" message="Please review before continuing." %}
+        {% include components/alert.html variant="danger" title="Error" message="Something went wrong." %}
+      </div>
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Badges & Avatars</h3>
+        <div class="u-flex u-gap-3 u-items-center u-flex-wrap">
+          {% include components/badge.html label="Primary" variant="primary" %}
+          {% include components/badge.html label="Success" variant="success" %}
+          {% include components/badge.html label="Warning" variant="warning" %}
+          {% include components/badge.html label="Danger" variant="danger" %}
+          {% include components/badge.html label="Online" variant="success" dot=true %}
+        </div>
+        <div class="u-flex u-gap-3 u-items-center u-mt-4">
+          {% include components/avatar.html initials="JD" size="sm" status="online" %}
+          {% include components/avatar.html initials="AB" size="md" status="busy" %}
+          {% include components/avatar.html initials="XY" size="lg" status="away" %}
+        </div>
+      </div>
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Form Controls</h3>
+        {% include components/input.html name="email" label="Email" type="email" placeholder="you@example.com" required=true %}
+        {% include components/textarea.html name="message" label="Message" placeholder="Write something..." %}
+        <div class="u-flex u-gap-4 u-flex-wrap">
+          {% include components/checkbox.html name="terms" label="I agree to the terms" %}
+          {% include components/radio.html name="plan" value="free" label="Free" checked=true %}
+          {% include components/radio.html name="plan" value="pro" label="Pro" %}
+        </div>
+      </div>
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Modal</h3>
+        {% include components/button.html label="Open Modal" variant="primary" class="" %}
+        <button type="button" class="c-button c-button--primary c-button--md" data-modal-open="demo-modal">Open Modal</button>
+        {% include components/modal.html
+          id="demo-modal"
+          title="Confirm action"
+          body="Are you sure you want to proceed? This action cannot be undone."
+          footer='<button type="button" class="c-button c-button--ghost c-button--md" data-modal-close>Cancel</button><button type="button" class="c-button c-button--primary c-button--md" data-modal-close>Confirm</button>'
+        %}
+      </div>
+
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Spinner & Progress</h3>
+        <div class="u-flex u-gap-4 u-items-center u-flex-wrap">
+          {% include components/spinner.html size="sm" %}
+          {% include components/spinner.html size="md" %}
+          {% include components/spinner.html size="lg" %}
+        </div>
+        {% include components/progress.html value=65 label="Upload progress" show_value=true %}
+        {% include components/progress.html value=40 variant="success" label="Complete" show_value=true size="sm" %}
+        {% include components/progress.html indeterminate=true label="Processing..." %}
+      </div>
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Breadcrumb</h3>
+        {% include components/breadcrumb.html items=site.data.demo.breadcrumb %}
+      </div>
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Pagination</h3>
+        {% include components/pagination.html current=3 total=10 base_url="/blog" %}
+      </div>
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Button Group</h3>
+        {% include components/button-group.html items=site.data.demo.button_group size="md" %}
+      </div>
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Code Block</h3>
+        {% capture demo_code %}{% raw %}{% include components/button.html
+   label="Get Started"
+   variant="primary"
+   size="lg"
+%}{% endraw %}{% endcapture %}
+        {% include components/code.html code=demo_code language="liquid" %}
+      </div>
+
+      <div class="l-stack l-stack--md">
+        <h3 class="t-h4">Toast</h3>
+        <button type="button" class="c-button c-button--outline c-button--md" onclick="window.showToast && showToast({title:'Saved',message:'Your changes have been saved.',variant:'success'})">
+          Show Success Toast
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
