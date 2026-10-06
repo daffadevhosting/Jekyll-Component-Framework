@@ -36,4 +36,4 @@ Primary landing section with title, subtitle, actions, and optional media.
 | `media` / `media_alt` | Optional image |
 | `variant` | `default` or `split` |
 
-See live usage on the [SaaS example](/examples/saas/) and [Portfolio example](/examples/portfolio/).
+See live usage on the [SaaS example]({{ "/examples/saas/" | relative_url }}) and [Portfolio example]({{ "/examples/portfolio/" | relative_url }}).
