@@ -19,7 +19,15 @@ All UI primitives ship as Liquid includes under `_includes/components/`.
 
 ## Full list
 
-Use the sidebar for the complete catalog (actions, content, forms, feedback, and navigation).
+{% for group in site.data.navigation.docs %}
+  {% if group.title == "Components" %}
+    {% for item in group.items %}
+      {% unless item.url == page.url %}
+- [{{ item.title }}]({{ item.url | relative_url }})
+      {% endunless %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
 
 ## Usage pattern
 

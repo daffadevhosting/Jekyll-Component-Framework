@@ -72,6 +72,20 @@ modal_example:
   body: Review your changes before continuing.
   size: md
 
+checkbox_example:
+  name: docs-checkbox
+  value: accepted
+  label: I agree to the terms
+
+radio_examples:
+  name: docs-plan
+  options:
+    - value: basic
+      label: Basic
+      checked: true
+    - value: pro
+      label: Pro
+
 blog_breadcrumb:
   - label: Home
     url: /

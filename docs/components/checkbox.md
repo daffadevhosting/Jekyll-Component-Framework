@@ -18,7 +18,12 @@ Styled native checkbox with an associated text label.
 %}{% endraw %}
 ```
 
-{% include components/checkbox.html name="docs-checkbox" value="accepted" label="I agree to the terms" %}
+<div class="docs-component-example">
+
+  {% assign checkbox_example = site.data.demo.checkbox_example %}
+  {% include components/checkbox.html name=checkbox_example.name value=checkbox_example.value label=checkbox_example.label checked=checkbox_example.checked required=checkbox_example.required disabled=checkbox_example.disabled %}
+
+</div>
 
 ## Parameters
 

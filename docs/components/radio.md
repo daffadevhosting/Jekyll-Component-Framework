@@ -14,8 +14,14 @@ Styled native radio option. Use the same `name` for mutually exclusive choices a
 {% include components/radio.html name="plan" value="pro" label="Pro" %}{% endraw %}
 ```
 
-{% include components/radio.html name="docs-plan" value="basic" label="Basic" checked=true %}
-{% include components/radio.html name="docs-plan" value="pro" label="Pro" %}
+<div class="docs-component-example">
+
+  {% assign radio_example = site.data.demo.radio_examples %}
+  {% for option in radio_example.options %}
+    {% include components/radio.html name=radio_example.name value=option.value label=option.label checked=option.checked required=option.required disabled=option.disabled %}
+  {% endfor %}
+
+</div>
 
 ## Parameters
 
