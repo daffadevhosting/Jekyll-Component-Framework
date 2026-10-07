@@ -14,7 +14,7 @@ Use the included design tokens and components as a starting point for SaaS, port
 
 ---
 
-[ss][def]
+![ss][def]
 
 ---
 
