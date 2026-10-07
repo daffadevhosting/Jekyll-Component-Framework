@@ -204,7 +204,8 @@ MIT License — see [LICENSE](LICENSE).
 
 ## Status
 
-Thicket UI 1.1.0 introduces the Thicket brand identity and component-garden design language. Core components include buttons, cards, alerts, badges, navigation, dialogs, and form controls.
+Thicket UI 1.2.0 introduces the Thicket brand identity and component-garden design language. Core components include buttons, cards, alerts, badges, navigation, dialogs, and form controls.
+- new button ripple effect, card glare, and border beam features
 
 More components, documentation pages, and example templates will be added iteratively.
 
