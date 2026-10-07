@@ -3,6 +3,7 @@ name: Thicket UI
 tagline: A living component garden for Jekyll
 description: Thoughtful, accessible Liquid components with an earthy editorial design language.
 logo: /assets/images/thicket-mark.svg
+same_as: []
 
 # Social
 social:

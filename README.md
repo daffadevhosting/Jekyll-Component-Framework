@@ -1,6 +1,6 @@
 # Thicket UI
 
-**A living component garden for Jekyll · v1.2.0**
+**A living component garden for Jekyll · v1.2.1**
 
 Thicket is an accessible, Liquid-native component system with an earthy palette, editorial typography, and a visual identity made for Jekyll—not another Bootstrap-shaped UI kit.
 It is built with:
@@ -24,6 +24,7 @@ Use the included design tokens and components as a starting point for SaaS, port
 - Design token system for rebranding without rewriting components
 - Dark Mode (light / dark / system) with localStorage persistence
 - Accessible components (WCAG 2.2 AA principles)
+- SEO metadata through `jekyll-seo-tag` plus site-level Organization structured data
 - Opt-in button ripple (`ripple=true`) and warm card glare (`glare=true`)
 - Optional card border beam (`border_beam=true`) for featured surfaces
 - Mobile-first responsive design
@@ -204,7 +205,7 @@ MIT License — see [LICENSE](LICENSE).
 
 ## Status
 
-Thicket UI 1.2.0 introduces the Thicket brand identity and component-garden design language. Core components include buttons, cards, alerts, badges, navigation, dialogs, and form controls.
+Thicket UI 1.2.1 adds site-level Organization structured data alongside the existing `jekyll-seo-tag` metadata. The Thicket brand identity and component-garden design language were introduced in 1.1.0. Core components include buttons, cards, alerts, badges, navigation, dialogs, and form controls.
 - new button ripple effect, card glare, and border beam features
 
 More components, documentation pages, and example templates will be added iteratively.

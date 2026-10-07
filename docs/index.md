@@ -14,6 +14,7 @@ It is designed as a **small design system with room to grow**, not a generic sta
 ## What you get
 
 - Design token system (CSS Custom Properties)
+- Organization structured data that complements `jekyll-seo-tag`
 - Light / dark / system theme
 - Accessible components (keyboard, ARIA, focus)
 - Consistent Liquid component API
