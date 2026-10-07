@@ -207,4 +207,4 @@ Thicket UI 1.1.0 introduces the Thicket brand identity and component-garden desi
 More components, documentation pages, and example templates will be added iteratively.
 
 
-[def]: /file.png
+[def]: ./file.png
