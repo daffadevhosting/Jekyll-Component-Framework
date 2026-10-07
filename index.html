@@ -1,21 +1,23 @@
 ---
 layout: default
 title: Home
-description: Production-ready modular UI component framework for Jekyll
+description: Thicket UI is a living component garden for accessible, distinctive Jekyll sites.
 ---
 
-<section class="l-section">
+<section class="c-garden-hero">
   <div class="l-container">
-    <div class="l-stack l-stack--xl u-items-center t-center">
-      <div class="l-stack l-stack--md">
-        {% include components/badge.html label="v1.0.0 · Production Ready" variant="primary" %}
-        <h1 class="t-display">Jekyll Component Framework</h1>
-        <p class="t-lead" style="max-width: 36rem; margin-inline: auto;">
-          Modular, accessible, and performant UI components built with Jekyll, Liquid, SCSS, and Vanilla JavaScript.
+    <div class="c-garden-hero__frame">
+      <div class="c-garden-hero__copy">
+        <p class="c-garden-hero__eyebrow">
+          <span class="c-garden-hero__seed" aria-hidden="true"></span>
+          A component garden for Jekyll
         </p>
-      </div>
-
-      <div class="u-flex u-gap-4 u-flex-wrap u-justify-center">
+        <p class="c-garden-hero__edition">Thicket UI / Release v.{{ site.version }}</p>
+        <h1 class="c-garden-hero__title">Give your site room to <em>grow.</em></h1>
+        <p class="c-garden-hero__description">
+          Thoughtful Liquid building blocks, rooted in an earthy design system. Make a site that feels like yours, without a JavaScript framework taking over.
+        </p>
+        <div class="c-garden-hero__actions">
         {% include components/button.html
           label="Get Started"
           href="/docs/"
@@ -23,32 +25,54 @@ description: Production-ready modular UI component framework for Jekyll
           size="lg"
           icon="arrow-right"
           icon_position="right"
+          class="c-button--garden"
         %}
         {% include components/button.html
-          label="SaaS Example"
-          href="/examples/saas/"
+          label="Explore components"
+          href="/docs/components/"
           variant="outline"
           size="lg"
         %}
-        {% include components/button.html
-          label="Portfolio"
-          href="/examples/portfolio/"
-          variant="ghost"
-          size="lg"
-        %}
-        {% include components/button.html
-          label="Blog"
-          href="/examples/blog/"
-          variant="ghost"
-          size="lg"
-        %}
+        </div>
+      </div>
+
+      <div class="c-garden-hero__art" aria-hidden="true">
+        <div class="c-garden-hero__orbit"></div>
+        <img
+          class="c-garden-hero__logo"
+          src="{{ '/assets/images/thicket-mark.svg' | relative_url }}"
+          alt=""
+          width="128"
+          height="128"
+        >
+        <div class="c-garden-hero__specimen c-garden-hero__specimen--liquid">
+          <span>01 / template</span>
+          <strong>Liquid</strong>
+        </div>
+        <div class="c-garden-hero__specimen c-garden-hero__specimen--scss">
+          <span>02 / palette</span>
+          <strong>SCSS</strong>
+        </div>
+        <div class="c-garden-hero__specimen c-garden-hero__specimen--javascript">
+          <span>03 / behavior</span>
+          <strong>Vanilla JS</strong>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="l-section l-section--sm u-bg-surface">
+<section class="l-section l-section--sm c-garden-features">
   <div class="l-container">
+    <div class="c-garden-features__intro">
+      <div>
+        <p class="c-garden-features__kicker">The roots of Thicket</p>
+        <h2 class="c-garden-features__title">Good foundations. Room to branch out.</h2>
+      </div>
+      <p class="c-garden-features__note">
+        A small, deliberate toolkit that gives your Jekyll project a point of view instead of another layer of framework conventions.
+      </p>
+    </div>
     <div class="l-grid l-grid--cols-3">
       {% include components/card.html
         title="Design Tokens"

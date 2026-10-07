@@ -1,9 +1,10 @@
 # =============================================================================
-# Jekyll Component Framework - Configuration
+# Thicket UI - Jekyll component garden
 # =============================================================================
 
-title: Jekyll Component Framework
-description: Production-ready modular UI component framework for Jekyll
+title: Thicket UI — Jekyll Component Garden
+version: 1.1.0
+description: A living component garden for distinctive, accessible Jekyll sites.
 url: "https://daffadevhosting.github.io" # Set in production (e.g. https://example.com)
 baseurl: "/jekyll-component-framework" # Set if deploying to a subdirectory
 
@@ -76,7 +77,7 @@ include:
 # =============================================================================
 theme_config:
   # Primary brand color (can also be overridden via CSS variables)
-  primary_color: "#6366f1"
+  primary_color: "#285943"
   # Border radius scale: sm | md | lg | xl
   radius: "md"
   # Enable dark mode support

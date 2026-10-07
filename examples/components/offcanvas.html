@@ -1,0 +1,24 @@
+---
+layout: default
+title: Offcanvas Example
+description: Demonstration of the accessible offcanvas component
+permalink: /examples/components/offcanvas/
+---
+
+<main class="l-container">
+  <h1>Offcanvas example</h1>
+  <p>Open the side panel to see the component in action.</p>
+
+  {% include components/button.html
+    label="Open panel"
+    variant="primary"
+    offcanvas_open="example-offcanvas"
+  %}
+
+  {% include components/offcanvas.html
+    id="example-offcanvas"
+    title="Example panel"
+    position="right"
+    content="<p>This panel can contain navigation, filters, or other supporting content.</p>"
+  %}
+</main>

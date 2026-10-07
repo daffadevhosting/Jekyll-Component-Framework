@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Components
-description: Component library overview for Jekyll Component Framework
+description: Explore the Thicket UI component garden
 permalink: /docs/components/
 ---
 
@@ -15,6 +15,7 @@ All UI primitives ship as Liquid includes under `_includes/components/`.
 - [Card]({{ "/docs/components/card/" | relative_url }})
 - [Form controls]({{ "/docs/components/forms/" | relative_url }})
 - [Modal]({{ "/docs/components/modal/" | relative_url }})
+- [Offcanvas]({{ "/docs/components/offcanvas/" | relative_url }})
 - [Navbar]({{ "/docs/components/navbar/" | relative_url }})
 
 ## Full list

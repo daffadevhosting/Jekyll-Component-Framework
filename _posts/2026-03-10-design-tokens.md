@@ -25,7 +25,7 @@ Without tokens, every component hard-codes values. Changing the brand color mean
 
 ```css
 :root {
-  --color-primary: #6366f1;
+  --color-primary: #285943;
 }
 ```
 

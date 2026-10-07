@@ -10,6 +10,7 @@
   - disabled    (boolean)
   - target      (string)  → _blank, etc.
   - modal_open  (string)  → id of a modal to open
+  - offcanvas_open (string) → id of an offcanvas panel to open
   - icon        (string)  → icon name
   - icon_position (string) → left|right, default: left
   - icon_only   (boolean)
@@ -45,6 +46,7 @@
     {% if include.target %}target="{{ include.target }}"{% if include.target == "_blank" %} rel="noopener noreferrer"{% endif %}{% endif %}
     {% if include.disabled %}aria-disabled="true" tabindex="-1"{% endif %}
     {% if include.modal_open %}data-modal-open="{{ include.modal_open }}"{% endif %}
+    {% if include.offcanvas_open %}data-offcanvas-open="{{ include.offcanvas_open }}" aria-controls="{{ include.offcanvas_open }}" aria-expanded="false"{% endif %}
     {% if include.aria_label %}aria-label="{{ include.aria_label }}"{% elsif include.icon_only and include.label %}aria-label="{{ include.label }}"{% endif %}
     role="button"
   >
@@ -69,6 +71,7 @@
     {% if include.id %}id="{{ include.id }}"{% endif %}
     {% if include.disabled %}disabled{% endif %}
     {% if include.modal_open %}data-modal-open="{{ include.modal_open }}"{% endif %}
+    {% if include.offcanvas_open %}data-offcanvas-open="{{ include.offcanvas_open }}" aria-controls="{{ include.offcanvas_open }}" aria-expanded="false"{% endif %}
     {% if include.aria_label %}aria-label="{{ include.aria_label }}"{% elsif include.icon_only and include.label %}aria-label="{{ include.label }}"{% endif %}
   >
     {% if include.icon and icon_position == "left" %}

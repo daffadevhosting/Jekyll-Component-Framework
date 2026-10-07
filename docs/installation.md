@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Installation
-description: Install and run Jekyll Component Framework
+description: Install and run Thicket UI
 permalink: /docs/installation/
 ---
 
@@ -39,7 +39,7 @@ url: https://example.com
 baseurl: ""
 
 theme_config:
-  primary_color: "#6366f1"
+  primary_color: "#285943"
   dark_mode: true
   default_theme: "system"
 ```

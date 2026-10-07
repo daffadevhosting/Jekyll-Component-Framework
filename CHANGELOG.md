@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-08
+
+### Added
+- Thicket UI name, custom seed-and-braces SVG mark, and matching favicon
+- Editorial component-garden homepage with a responsive Liquid / SCSS / JavaScript illustration
+- Thicket woodland color palette, warm paper surfaces, and serif display typography for light and dark themes
+- Offcanvas side panel component with keyboard, focus, and backdrop behavior
+
+### Changed
+- Rebranded site navigation, metadata, documentation, and examples as Thicket UI
+- Added the offcanvas example and linked its documentation
+
 ## [1.0.0] - 2026-03-25
 
 ### Added

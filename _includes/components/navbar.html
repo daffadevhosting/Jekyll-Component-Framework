@@ -4,6 +4,7 @@
   Parameters:
   - brand       (string)  → site name
   - brand_url   (string)
+  - brand_mark  (string)  → optional logo image URL
   - transparent (boolean)
   - elevated    (boolean)
   - menu_id     (string)  → mobile menu id, default: mobile-menu
@@ -12,6 +13,7 @@
 
 {% assign brand = include.brand | default: site.title %}
 {% assign brand_url = include.brand_url | default: "/" %}
+{% assign brand_mark = include.brand_mark %}
 {% assign mobile_menu_id = include.menu_id | default: "mobile-menu" %}
 
 {% capture nav_classes %}
@@ -26,7 +28,19 @@
   <div class="l-container">
     <div class="c-navbar__inner">
       <a href="{{ brand_url | relative_url }}" class="c-navbar__brand">
-        {{ brand }}
+        {% if brand_mark %}
+          <img
+            class="c-navbar__brand-mark"
+            src="{{ brand_mark | relative_url }}"
+            alt=""
+            width="40"
+            height="40"
+          >
+        {% endif %}
+        <span class="c-navbar__brand-copy">
+          <span class="c-navbar__brand-name">{{ brand }}</span>
+          <span class="c-navbar__brand-note">Jekyll component garden</span>
+        </span>
       </a>
 
       <nav class="c-navbar__nav" aria-label="Main navigation">

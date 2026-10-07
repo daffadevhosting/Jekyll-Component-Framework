@@ -1,7 +1,8 @@
 # Site-wide data
-name: Jekyll Component Framework
-tagline: Production-ready modular UI components for Jekyll
-description: A lightweight, accessible, and customizable component framework built with Jekyll, Liquid, SCSS, and Vanilla JavaScript.
+name: Thicket UI
+tagline: A living component garden for Jekyll
+description: Thoughtful, accessible Liquid components with an earthy editorial design language.
+logo: /assets/images/thicket-mark.svg
 
 # Social
 social:
@@ -10,7 +11,7 @@ social:
 
 # Footer
 footer:
-  copyright: "© 2025 Jekyll Component Framework. MIT License."
+  copyright: "© 2026 Thicket UI. MIT License."
   links:
     - title: Documentation
       url: /docs/

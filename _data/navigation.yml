@@ -55,6 +55,8 @@ docs:
         url: /docs/components/tooltip/
       - title: Modal
         url: /docs/components/modal/
+      - title: Offcanvas
+        url: /docs/components/offcanvas/
       - title: Form Controls
         url: /docs/components/forms/
       - title: Input
