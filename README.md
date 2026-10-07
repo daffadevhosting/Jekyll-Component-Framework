@@ -1,6 +1,6 @@
 # Thicket UI
 
-**A living component garden for Jekyll · v1.1.0**
+**A living component garden for Jekyll · v1.2.0**
 
 Thicket is an accessible, Liquid-native component system with an earthy palette, editorial typography, and a visual identity made for Jekyll—not another Bootstrap-shaped UI kit.
 It is built with:
