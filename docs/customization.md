@@ -21,6 +21,20 @@ Override CSS custom properties:
 
 Place overrides in a stylesheet loaded after `main.css`, or edit `_tokens.scss`.
 
+## Border beam accent
+
+Use the `border_beam=true` card parameter to add a slow, woodland-gold highlight:
+
+```liquid
+{% include components/card.html
+   title="Featured"
+   body="A highlighted card."
+   border_beam=true
+%}
+```
+
+Alternatively, add `u-border-beam` to a custom surface. The beam respects `prefers-reduced-motion`; reserve it for a few featured surfaces to keep the effect subtle.
+
 ## Dark mode
 
 Supported values on `<html>`:

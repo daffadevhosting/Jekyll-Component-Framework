@@ -17,6 +17,7 @@ Primary action component. Renders as `<button>` or `<a>` depending on `href`.
    href="/pricing/"
    variant="primary"
    size="lg"
+   ripple=true
 %}{% endraw %}
 ```
 
@@ -30,6 +31,7 @@ Primary action component. Renders as `<button>` or `<a>` depending on `href`.
 | `size` | string | `md` | `sm` `md` `lg` |
 | `type` | string | `button` | `button` `submit` `reset` |
 | `disabled` | boolean | false | Disabled state |
+| `ripple` | boolean | false | Show a pointer-positioned ripple on click and a centered ripple on keyboard activation |
 | `modal_open` | string | — | Modal id to open when the button is clicked |
 | `icon` | string | — | Icon name |
 | `icon_position` | string | `left` | `left` `right` |
@@ -48,6 +50,7 @@ Primary action component. Renders as `<button>` or `<a>` depending on `href`.
 {% include components/button.html label="Ghost" variant="ghost" %}
 {% include components/button.html label="Danger" variant="danger" %}
 {% include components/button.html label="Success" variant="success" %}
+{% include components/button.html label="Ripple" variant="primary" ripple=true %}
 </div>
 
 ## Accessibility
@@ -55,4 +58,5 @@ Primary action component. Renders as `<button>` or `<a>` depending on `href`.
 - Uses native `<button>` or `<a role="button">`
 - Visible focus ring via `:focus-visible`
 - `disabled` / `aria-disabled` supported
+- Set `ripple=true` to enable the decorative ripple; it respects `prefers-reduced-motion`
 - Icon-only buttons require `aria_label` or `label`

@@ -14,6 +14,7 @@
   - icon        (string)  → icon name
   - icon_position (string) → left|right, default: left
   - icon_only   (boolean)
+  - ripple      (boolean) → enable pointer / keyboard ripple feedback
   - block       (boolean)
   - class       (string)  → extra classes
   - id          (string)
@@ -32,6 +33,7 @@
   c-button
   c-button--{{ variant }}
   c-button--{{ size }}
+  {% if include.ripple %}c-button--ripple{% endif %}
   {% if include.block %}c-button--block{% endif %}
   {% if include.icon_only %}c-button--icon-only{% endif %}
   {{ include.class }}

@@ -9,6 +9,8 @@
   - media       (string)  → image URL
   - media_alt   (string)
   - hoverable   (boolean)
+  - glare       (boolean) → pointer-tracked highlight on hover/focus
+  - border_beam (boolean) → animated accent around the card border
   - elevated    (boolean)
   - borderless  (boolean)
   - class       (string)
@@ -18,6 +20,8 @@
 {% capture card_classes %}
   c-card
   {% if include.hoverable %}c-card--hoverable{% endif %}
+  {% if include.glare %}c-card--glare{% endif %}
+  {% if include.border_beam %}c-card--border-beam{% endif %}
   {% if include.elevated %}c-card--elevated{% endif %}
   {% if include.borderless %}c-card--borderless{% endif %}
   {{ include.class }}

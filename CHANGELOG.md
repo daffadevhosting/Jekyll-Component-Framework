@@ -2,12 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.2.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.2.0] - 2026-10-08
 
-## [1.1.0] - 2026-10-08
+### Added
+- Opt-in `ripple=true` feedback for buttons, including keyboard activation
+- Opt-in `glare=true` pointer highlight and `border_beam=true` accent for cards
+- Subtle animated border beams on the homepage hero and selected feature cards
+
+## [1.1.0] - 2026-10-05
 
 ### Added
 - Thicket UI name, custom seed-and-braces SVG mark, and matching favicon

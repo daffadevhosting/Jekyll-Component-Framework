@@ -3,6 +3,8 @@
 // =============================================================================
 
 .c-button {
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -26,8 +28,43 @@
   white-space: nowrap;
   user-select: none;
 
+  > :not(.c-button__ripple) {
+    position: relative;
+    z-index: 1;
+  }
+
   &:focus-visible {
     @include focus-ring;
+  }
+
+  .c-button__ripple {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    background: currentColor;
+    opacity: 0;
+    pointer-events: none;
+    clip-path: circle(0 at var(--ripple-x) var(--ripple-y));
+    animation: button-ripple 560ms ease-out forwards;
+  }
+
+  @keyframes button-ripple {
+    0% {
+      opacity: 0.22;
+      clip-path: circle(0 at var(--ripple-x) var(--ripple-y));
+    }
+
+    100% {
+      opacity: 0;
+      clip-path: circle(150% at var(--ripple-x) var(--ripple-y));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .c-button__ripple {
+      display: none;
+    }
   }
 
   &:disabled,

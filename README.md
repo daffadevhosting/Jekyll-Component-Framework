@@ -24,6 +24,8 @@ Use the included design tokens and components as a starting point for SaaS, port
 - Design token system for rebranding without rewriting components
 - Dark Mode (light / dark / system) with localStorage persistence
 - Accessible components (WCAG 2.2 AA principles)
+- Opt-in button ripple (`ripple=true`) and warm card glare (`glare=true`)
+- Optional card border beam (`border_beam=true`) for featured surfaces
 - Mobile-first responsive design
 - Minimal dependencies
 - Progressive enhancement

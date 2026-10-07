@@ -6,13 +6,13 @@ description: Thicket UI is a living component garden for accessible, distinctive
 
 <section class="c-garden-hero">
   <div class="l-container">
-    <div class="c-garden-hero__frame">
+    <div class="c-garden-hero__frame u-border-beam">
       <div class="c-garden-hero__copy">
         <p class="c-garden-hero__eyebrow">
           <span class="c-garden-hero__seed" aria-hidden="true"></span>
           A component garden for Jekyll
         </p>
-        <p class="c-garden-hero__edition">Thicket UI / Release v.{{ site.version }}</p>
+        <p class="c-garden-hero__edition">Thicket UI / Release {{ site.version }}</p>
         <h1 class="c-garden-hero__title">Give your site room to <em>grow.</em></h1>
         <p class="c-garden-hero__description">
           Thoughtful Liquid building blocks, rooted in an earthy design system. Make a site that feels like yours, without a JavaScript framework taking over.
@@ -78,16 +78,24 @@ description: Thicket UI is a living component garden for accessible, distinctive
         title="Design Tokens"
         body="Centralized CSS Custom Properties. Change one variable and rebrand the entire system."
         elevated=true
+        hoverable=true
+        glare=true
+        border_beam=true
       %}
       {% include components/card.html
         title="Accessible by Default"
         body="Semantic HTML, keyboard navigation, ARIA where needed, and visible focus states."
         elevated=true
+        hoverable=true
+        glare=true
       %}
       {% include components/card.html
         title="Zero Framework Lock-in"
         body="Pure Jekyll + Liquid + SCSS + Vanilla JS. No React, Vue, or build step required."
         elevated=true
+        hoverable=true
+        glare=true
+        border_beam=true
       %}
     </div>
   </div>
@@ -101,7 +109,7 @@ description: Thicket UI is a living component garden for accessible, distinctive
       <div class="l-stack l-stack--md">
         <h3 class="t-h4">Buttons</h3>
         <div class="u-flex u-gap-3 u-flex-wrap">
-          {% include components/button.html label="Primary" variant="primary" size="md" %}
+          {% include components/button.html label="Primary" variant="primary" size="md" ripple=true %}
           {% include components/button.html label="Secondary" variant="secondary" size="md" %}
           {% include components/button.html label="Outline" variant="outline" size="md" %}
           {% include components/button.html label="Ghost" variant="ghost" size="md" %}

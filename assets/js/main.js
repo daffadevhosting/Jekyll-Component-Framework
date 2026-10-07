@@ -12,6 +12,7 @@ import { initDropdown } from './components/dropdown.js';
 import { initTooltip } from './components/tooltip.js';
 import { initToast } from './components/toast.js';
 import { initCode } from './components/code.js';
+import { initMicroInteractions } from './components/micro-interactions.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
@@ -24,4 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initTooltip();
   initToast();
   initCode();
+  initMicroInteractions();
 });

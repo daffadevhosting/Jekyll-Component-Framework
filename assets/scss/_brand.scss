@@ -2,6 +2,63 @@
 // Thicket brand - editorial component garden
 // =============================================================================
 
+@property --beam-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.u-border-beam,
+.c-card--border-beam {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    padding: 1.5px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--beam-angle),
+      transparent 0deg 286deg,
+      rgba(231, 197, 121, 0.18) 306deg,
+      #e7c579 326deg,
+      #fff0bd 336deg,
+      rgba(161, 196, 158, 0.72) 346deg,
+      transparent 360deg
+    );
+    content: "";
+    pointer-events: none;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: border-beam-turn var(--border-beam-duration, 9s) linear infinite;
+  }
+}
+
+@keyframes border-beam-turn {
+  to {
+    --beam-angle: 360deg;
+  }
+}
+
+.l-grid--cols-3 > .c-card--border-beam:nth-child(2) {
+  --border-beam-duration: 12s;
+}
+
+.l-grid--cols-3 > .c-card--border-beam:nth-child(3) {
+  --border-beam-duration: 15s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .u-border-beam::before,
+  .c-card--border-beam::before {
+    animation: none;
+  }
+}
+
 .c-garden-hero {
   padding-block: var(--space-6) var(--space-16);
 
@@ -20,7 +77,7 @@
   overflow: hidden;
   padding: clamp(2rem, 6vw, 5.5rem);
   border: 1px solid rgba(250, 248, 240, 0.14);
-  border-radius: var(--radius-2xl) var(--radius-2xl) var(--radius-2xl) var(--radius-lg);
+  border-radius: var(--radius-2xl) var(--radius-2xl) var(--radius-2xl) var(--radius-2xl);
   background-color: var(--color-brand-forest);
   background-image:
     radial-gradient(ellipse at 82% 14%, rgba(231, 197, 121, 0.15), transparent 28rem),
